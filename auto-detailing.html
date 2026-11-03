@@ -2,414 +2,852 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Auto detailing website design demonstration by BrightPath Web Design.">
-<title>Auto Detailing Website Demo | BrightPath Web Design</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional auto detailing website design sample by BrightPath Web Design.">
+  <title>Elite Auto Detailing | BrightPath Web Design Demo</title>
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;color:#17263b;line-height:1.6}
-.container{width:min(1100px,90%);margin:auto}
+  <style>
+    :root {
+      --navy: #101a2b;
+      --navy-light: #182840;
+      --gold: #c9a45c;
+      --gold-light: #e4c783;
+      --white: #f7f7f5;
+      --muted: #b8c1ce;
+      --dark: #0b1220;
+    }
 
-header{background:#081426;padding:18px 0}
-.nav{display:flex;justify-content:space-between;align-items:center;gap:20px}
-.logo{color:white;font-size:1.5rem;font-weight:bold;text-decoration:none}
-.logo span{color:#48c7f5}
-nav{display:flex;flex-wrap:wrap;gap:20px}
-nav a{color:white;text-decoration:none;font-size:.9rem}
-nav a:hover{color:#48c7f5}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.demo-banner{
-background:#fff3cd;
-color:#664d03;
-padding:18px 5%;
-text-align:center;
-border-bottom:1px solid #e8d69b;
-font-size:.95rem;
-}
-.demo-banner strong{display:block;margin-bottom:5px;font-size:1.05rem}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.button{
-display:inline-block;
-background:#2878f0;
-color:white;
-padding:14px 24px;
-border-radius:7px;
-text-decoration:none;
-font-weight:bold;
-border:0;
-cursor:pointer;
-font-size:1rem;
-}
-.button:hover{background:#1764d4}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.7;
+    }
 
-.hero{background:linear-gradient(135deg,#081426,#17365e);color:white;padding:95px 0}
-.hero-content{max-width:780px}
-.eyebrow{color:#48c7f5;font-size:.8rem;font-weight:bold;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
-h1{font-size:clamp(2.5rem,6vw,4.3rem);line-height:1.1;margin-bottom:22px}
-.hero p{color:#d3deed;font-size:1.15rem;margin-bottom:28px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:13px}
-.outline{display:inline-block;border:1px solid white;color:white;padding:13px 22px;border-radius:7px;text-decoration:none}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-section{padding:75px 0}
-.heading{text-align:center;max-width:750px;margin:0 auto 40px}
-.heading .eyebrow{color:#2878f0}
-h2{font-size:clamp(2rem,4vw,2.8rem);color:#081426;line-height:1.2;margin-bottom:14px}
-.heading p{color:#64748b}
+    .demo-notice {
+      background: var(--gold);
+      color: #111827;
+      text-align: center;
+      padding: 11px 18px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+    }
 
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:white;border:1px solid #e1e8f1;border-radius:12px;padding:26px;box-shadow:0 8px 25px rgba(12,35,65,.05)}
-.card h3{color:#081426;margin-bottom:10px}
-.card p{color:#64748b}
-.icon{font-size:1.6rem;margin-bottom:12px}
+    header {
+      background: rgba(11, 18, 32, 0.97);
+      border-bottom: 1px solid rgba(201, 164, 92, 0.25);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-.dark{background:#081426;color:white}
-.dark h2{color:white}
-.dark .heading p{color:#c2d0e1}
-.dark .card{background:#122743;border-color:#29415f}
-.dark .card h3{color:white}
-.dark .card p{color:#c2d0e1}
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 19px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-.gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.gallery-card{background:white;border:1px solid #e1e8f1;border-radius:12px;overflow:hidden;box-shadow:0 8px 25px rgba(12,35,65,.08)}
-.gallery-card img{width:100%;height:350px;object-fit:cover;display:block}
-.gallery-caption{padding:19px}
-.gallery-caption h3{color:#081426;margin-bottom:7px}
-.gallery-caption p{color:#64748b;font-size:.92rem}
-.gallery-note{max-width:850px;text-align:center;color:#64748b;font-size:.9rem;margin:24px auto 0}
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-.pricing{background:#f3f7fc}
-.price-card{background:white;border:1px solid #e1e8f1;border-radius:12px;padding:26px;display:flex;flex-direction:column}
-.price-card.featured{border:2px solid #2878f0}
-.price{font-size:2.3rem;font-weight:bold;color:#081426;margin:10px 0}
-.price-card>p{color:#64748b;margin-bottom:16px}
-.price-card ul{list-style:none;flex:1;margin-bottom:22px}
-.price-card li{padding:8px 0;border-bottom:1px solid #edf1f6;color:#52647b;font-size:.93rem}
-.price-card li:before{content:"✓";color:#2878f0;font-weight:bold;margin-right:9px}
-.price-card .button{text-align:center}
+    .logo span {
+      color: var(--gold);
+    }
 
-.process-number{background:#eaf3ff;color:#2878f0;border-radius:50%;width:40px;height:40px;display:grid;place-items:center;font-weight:bold;margin-bottom:15px}
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
 
-.faq{background:#f3f7fc}
-.faq-list{max-width:800px;margin:auto;display:grid;gap:14px}
-.faq-item{background:white;padding:22px;border:1px solid #e1e8f1;border-radius:10px}
-.faq-item h3{color:#081426;margin-bottom:8px}
-.faq-item p{color:#64748b}
+    nav a {
+      font-size: 13px;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
 
-.contact{background:linear-gradient(135deg,#0b1b32,#153d70);color:white}
-.contact h2{color:white}
-.contact-intro{text-align:center}
-.contact-intro p{color:#d1dceb;max-width:680px;margin:0 auto 25px}
+    nav a:hover {
+      color: var(--gold-light);
+    }
 
-.quote-form{
-max-width:700px;
-margin:35px auto 0;
-padding:30px;
-background:white;
-color:#17263b;
-border-radius:12px;
-text-align:left;
-box-shadow:0 10px 30px rgba(0,0,0,.18);
-}
-.quote-form label{display:block;font-weight:bold;margin:16px 0 6px}
-.quote-form input,
-.quote-form select,
-.quote-form textarea{
-width:100%;
-padding:13px;
-border:1px solid #cbd5e1;
-border-radius:6px;
-font:inherit;
-background:#fff;
-color:#17263b;
-}
-.quote-form textarea{min-height:130px;resize:vertical}
-.quote-form input:focus,
-.quote-form select:focus,
-.quote-form textarea:focus{
-outline:2px solid #2878f0;
-border-color:#2878f0;
-}
-.quote-form .button{width:100%;margin-top:22px}
-.form-disclaimer{
-background:#fff3cd;
-color:#664d03;
-padding:14px;
-border-radius:7px;
-font-size:.9rem;
-margin-bottom:18px;
-}
-.form-required{color:#64748b;font-size:.85rem;margin-top:10px}
+    .nav-quote {
+      background: var(--gold);
+      color: var(--dark);
+      padding: 9px 16px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
 
-.email{display:block;color:#48c7f5;font-weight:bold;margin-top:22px;text-decoration:none;text-align:center}
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(7, 14, 25, 0.94), rgba(7, 14, 25, 0.52)),
+        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+    }
 
-footer{background:#06101e;color:#9eafc5;text-align:center;padding:25px 0;font-size:.88rem}
-footer a{color:#48c7f5;text-decoration:none}
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 90px 24px;
+    }
 
-@media(max-width:800px){
-.nav{flex-direction:column;align-items:flex-start}
-.grid{grid-template-columns:1fr}
-.hero{padding:70px 0}
-section{padding:58px 0}
-.gallery-grid{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-nav{gap:12px}
-nav a{font-size:.83rem}
-.hero-actions .button,.hero-actions .outline{width:100%;text-align:center}
-.gallery-card img{height:260px}
-.quote-form{padding:20px}
-}
-</style>
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      max-width: 720px;
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.08;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      max-width: 590px;
+      color: #d2d8e0;
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 14px 25px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: 0.2s;
+      border: 1px solid var(--gold);
+    }
+
+    .button:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.5);
+      margin-left: 10px;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 85px 24px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 3px;
+      background: var(--gold);
+      margin: 18px auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-grid img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .about-copy h2 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .services {
+      background: var(--dark);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--navy-light);
+      padding: 30px;
+      border: 1px solid rgba(201,164,92,0.2);
+      border-radius: 7px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .service-icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: var(--gold-light);
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      background: var(--navy-light);
+      border-radius: 7px;
+      border: 1px solid rgba(201,164,92,0.2);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 350px;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-caption {
+      padding: 16px 19px;
+      color: var(--gold-light);
+      font-weight: bold;
+    }
+
+    .gallery-disclosure {
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+      margin-top: 22px;
+    }
+
+    .pricing {
+      background: var(--dark);
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .price-card {
+      background: var(--navy-light);
+      border: 1px solid rgba(201,164,92,0.25);
+      border-radius: 7px;
+      padding: 32px 25px;
+      text-align: center;
+    }
+
+    .price-card.featured {
+      border: 2px solid var(--gold);
+    }
+
+    .price-card h3 {
+      color: var(--gold-light);
+      font-size: 21px;
+      margin-bottom: 14px;
+    }
+
+    .price {
+      font-size: 29px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .price-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .price-card ul {
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .price-card li {
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .contact {
+      background: var(--navy-light);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-size: 35px;
+      margin-bottom: 18px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .contact-info strong {
+      color: var(--gold-light);
+    }
+
+    form {
+      background: var(--navy);
+      border: 1px solid rgba(201,164,92,0.25);
+      border-radius: 7px;
+      padding: 30px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: var(--gold-light);
+      margin-bottom: 7px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 18px;
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px;
+      color: white;
+      font: inherit;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 1px solid var(--gold);
+      border-color: var(--gold);
+    }
+
+    select option {
+      background: var(--navy);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    form button {
+      cursor: pointer;
+      width: 100%;
+      font-size: 15px;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    footer {
+      background: #080e19;
+      padding: 35px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(201,164,92,0.2);
+    }
+
+    footer .footer-logo {
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    footer .footer-logo span {
+      color: var(--gold);
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 7px;
+    }
+
+    .back-home {
+      display: inline-block;
+      color: var(--gold-light);
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 13px;
+      }
+
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid, .price-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 520px;
+      }
+
+      .hero-content {
+        padding: 65px 22px;
+      }
+
+      .button-outline {
+        margin: 12px 0 0;
+      }
+
+      .service-grid, .price-grid, .gallery-grid, .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item img {
+        height: 260px;
+      }
+
+      .section {
+        padding: 65px 20px;
+      }
+
+      .about-grid img {
+        height: 280px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<div class="container nav">
-<a class="logo" href="index.html">BrightPath<span>.</span></a>
-<nav>
-<a href="index.html">Home</a>
-<a href="#benefits">Why a Website</a>
-<a href="#features">Features</a>
-<a href="#gallery">Gallery</a>
-<a href="#pricing">Pricing</a>
-<a href="#contact">Get a Quote</a>
-</nav>
-</div>
-</header>
+  <div class="demo-notice">
+    DEMO WEBSITE — SAMPLE DESIGN BY BRIGHTPATH WEB DESIGN — NOT A REAL AUTO DETAILING BUSINESS
+  </div>
 
-<div class="demo-banner">
-<strong>DEMO WEBSITE — BrightPath Web Design</strong>
-This is a sample website created to demonstrate website design services. This is not an actual auto detailing business. Photos are illustrative stock images, not client projects or work completed by BrightPath.
-</div>
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">ELITE <span>AUTO DETAILING</span></a>
 
-<main>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="nav-quote">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero">
-<div class="container hero-content">
-<div class="eyebrow">Website Design for Auto Detailers</div>
-<h1>Get Your Detailing Business Noticed Online.</h1>
-<p>Your detailing work deserves to be seen. BrightPath Web Design builds professional websites that help auto detailing businesses showcase their services, display their work, and make it easier for customers to request a quote.</p>
-<div class="hero-actions">
-<a class="button" href="#contact">Get a Website Quote</a>
-<a class="outline" href="#features">Explore Website Features</a>
-</div>
-</div>
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Premium Automotive Care</div>
+      <h1>Bring Back the <span>Showroom Shine.</span></h1>
+      <p>
+        Give your vehicle the attention it deserves. Explore a sample
+        auto detailing experience built around quality, care, and
+        attention to every detail.
+      </p>
+      <a href="#contact" class="button">Request a Quote</a>
+      <a href="#services" class="button button-outline">Explore Services</a>
+    </div>
+  </section>
 
-<section id="benefits">
-<div class="container">
-<div class="heading">
-<div class="eyebrow">Your online first impression</div>
-<h2>Make It Easier for Customers to Choose Your Business</h2>
-<p>A professional website puts your services, photos, business information, and contact options in one convenient place.</p>
-</div>
-<div class="grid">
-<article class="card"><div class="icon">📸</div><h3>Showcase Your Work</h3><p>Display real photos of your detailing results so customers can see the quality of your work.</p></article>
-<article class="card"><div class="icon">🚘</div><h3>Explain Your Services</h3><p>Organize your detailing services and packages so customers understand what you offer.</p></article>
-<article class="card"><div class="icon">✉</div><h3>Make Contact Simple</h3><p>Give potential customers clear ways to ask questions and request a quote.</p></article>
-</div>
-</div>
-</section>
+  <section class="section" id="about">
+    <div class="about-grid">
+      <img
+        src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=85"
+        alt="Vehicle receiving professional detailing care"
+      >
 
-<section class="dark" id="features">
-<div class="container">
-<div class="heading">
-<div class="eyebrow">Made for detailing businesses</div>
-<h2>Features That Put Your Business in the Spotlight</h2>
-<p>Your website can be organized around the information detailing customers want to find.</p>
-</div>
-<div class="grid">
-<article class="card"><div class="icon">▣</div><h3>Before-and-After Gallery</h3><p>Highlight your own vehicle photos and completed detailing jobs.</p></article>
-<article class="card"><div class="icon">☰</div><h3>Service and Package Pages</h3><p>Present interior detailing, exterior detailing, full details, ceramic coatings, and more.</p></article>
-<article class="card"><div class="icon">📍</div><h3>Service Area Information</h3><p>Tell visitors which cities and surrounding areas you serve.</p></article>
-<article class="card"><div class="icon">✉</div><h3>Quote Request Options</h3><p>Make it easy for customers to contact you about their vehicle and services.</p></article>
-<article class="card"><div class="icon">📱</div><h3>Mobile-Friendly Design</h3><p>Give customers an easy-to-use experience on phones, tablets, and computers.</p></article>
-<article class="card"><div class="icon">★</div><h3>Business Information</h3><p>Display your hours, contact details, and important business information.</p></article>
-</div>
-</div>
-</section>
+      <div class="about-copy">
+        <div class="eyebrow">The Detailing Difference</div>
+        <h2>Care That Goes Beyond the Surface.</h2>
+        <p>
+          A clean vehicle is about more than appearances. It's about
+          protecting your investment and enjoying a fresh, comfortable
+          driving experience.
+        </p>
+        <p>
+          This sample business website demonstrates how an auto
+          detailing company can showcase its services, highlight its
+          work, and make it easy for customers to request an estimate.
+        </p>
+        <a href="#contact" class="button">Let's Get Started</a>
+      </div>
+    </div>
+  </section>
 
-<section id="gallery">
-<div class="container">
-<div class="heading">
-<div class="eyebrow">A look at detailing services</div>
-<h2>A Gallery That Lets Your Results Speak</h2>
-<p>Professional photos help visitors understand the types of detailing services your business can offer.</p>
-</div>
+  <section class="services" id="services">
+    <div class="section">
+      <div class="section-heading">
+        <div class="eyebrow">What We Offer</div>
+        <h2>Detailing Services</h2>
+        <div class="gold-line"></div>
+        <p>
+          A selection of services that can be customized to fit
+          different vehicles and detailing needs.
+        </p>
+      </div>
 
-<div class="gallery-grid">
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">✦</div>
+          <h3>Exterior Detailing</h3>
+          <p>
+            Thorough exterior cleaning, careful hand washing,
+            and attention to the details that make a vehicle shine.
+          </p>
+        </div>
 
-<article class="gallery-card">
-<img src="pexels-wavyvisuals-377312923-20042052.jpg" alt="Detailer polishing the exterior of a sports car" loading="lazy">
-<div class="gallery-caption">
-<h3>Exterior Vehicle Polishing</h3>
-<p>Illustrative stock photo showing an example of exterior detailing.</p>
-</div>
-</article>
+        <div class="service-card">
+          <div class="service-icon">✧</div>
+          <h3>Interior Detailing</h3>
+          <p>
+            A refreshed interior with detailed cleaning of seats,
+            carpets, surfaces, and hard-to-reach areas.
+          </p>
+        </div>
 
-<article class="gallery-card">
-<img src="pexels-khunkorn-laowisit-1359149-5233285.jpg" alt="Professional interior car seat deep cleaning" loading="lazy">
-<div class="gallery-caption">
-<h3>Interior Deep Cleaning</h3>
-<p>Illustrative stock photo showing an example of interior detailing.</p>
-</div>
-</article>
+        <div class="service-card">
+          <div class="service-icon">◆</div>
+          <h3>Paint Correction</h3>
+          <p>
+            A paint enhancement service designed to improve the
+            appearance of certain surface imperfections.
+          </p>
+        </div>
 
-<article class="gallery-card">
-<img src="pexels-magda-ehlers-pexels-10900760.jpg" alt="Dirty vehicle before detailing" loading="lazy">
-<div class="gallery-caption">
-<h3>Before — Vehicle Condition</h3>
-<p>Illustrative stock photo representing a vehicle before detailing.</p>
-</div>
-</article>
+        <div class="service-card">
+          <div class="service-icon">✦</div>
+          <h3>Wax & Protection</h3>
+          <p>
+            Add a protective finish and enhance the appearance
+            of your vehicle's exterior.
+          </p>
+        </div>
 
-<article class="gallery-card">
-<img src="pexels-quentin-martinez-2147503099-30685300.jpg" alt="Shiny, freshly detailed vehicle exterior" loading="lazy">
-<div class="gallery-caption">
-<h3>After-Style — Detailed Finish</h3>
-<p>Illustrative stock photo showing the appearance of a clean, polished vehicle.</p>
-</div>
-</article>
+        <div class="service-card">
+          <div class="service-icon">✧</div>
+          <h3>Full Detail Package</h3>
+          <p>
+            A comprehensive interior and exterior detailing
+            experience for a complete vehicle refresh.
+          </p>
+        </div>
 
-</div>
+        <div class="service-card">
+          <div class="service-icon">◆</div>
+          <h3>Maintenance Details</h3>
+          <p>
+            Keep your vehicle looking its best with scheduled
+            cleaning and ongoing detailing care.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p class="gallery-note"><strong>Illustrative examples only:</strong> All four images are stock photos sourced from Pexels. They are not BrightPath client projects and do not represent work completed by BrightPath Web Design. The two vehicle comparison images show different vehicles and are not a real before-and-after transformation of the same car. A detailing business can replace these examples with its own vehicle and customer photos.</p>
-</div>
-</section>
+  <section class="section" id="gallery">
+    <div class="section-heading">
+      <div class="eyebrow">A Closer Look</div>
+      <h2>Our Detailing Gallery</h2>
+      <div class="gold-line"></div>
+      <p>
+        A visual example of how an auto detailing business can
+        display its services and vehicle photography.
+      </p>
+    </div>
 
-<section class="pricing" id="pricing">
-<div class="container">
-<div class="heading">
-<div class="eyebrow">Website packages</div>
-<h2>Professional Website Design at Clear Starting Prices</h2>
-<p>Choose the package that fits your business. Final project scope, features, and price are confirmed in a written quote before work begins.</p>
-</div>
-<div class="grid">
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img
+          src="https://images.pexels.com/photos/20042052/pexels-photo-20042052.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Detailer polishing a vehicle exterior"
+        >
+        <div class="gallery-caption">Exterior Paint Care</div>
+      </div>
 
-<article class="price-card">
-<h3>Starter</h3><div class="price">$499</div>
-<p>A clean one-page website for your detailing business.</p>
-<ul>
-<li>One-page website</li><li>Mobile-friendly layout</li><li>Business introduction</li><li>Services section</li><li>Contact information</li><li>One revision round</li>
-</ul>
-<a class="button" href="#contact">Ask About Starter</a>
-</article>
+      <div class="gallery-item">
+        <img
+          src="https://images.pexels.com/photos/5233285/pexels-photo-5233285.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Vehicle interior cleaning"
+        >
+        <div class="gallery-caption">Interior Deep Cleaning</div>
+      </div>
 
-<article class="price-card featured">
-<h3>Business</h3><div class="price">$899</div>
-<p>More room to showcase services and completed work.</p>
-<ul>
-<li>Up to five pages</li><li>Mobile-friendly layout</li><li>Service descriptions</li><li>Photo gallery section</li><li>Quote request options</li><li>Two revision rounds</li>
-</ul>
-<a class="button" href="#contact">Ask About Business</a>
-</article>
+      <div class="gallery-item">
+        <img
+          src="https://images.pexels.com/photos/10900760/pexels-photo-10900760.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Vehicle showing dirt before detailing"
+        >
+        <div class="gallery-caption">Vehicle Cleaning Example</div>
+      </div>
 
-<article class="price-card">
-<h3>Premium</h3><div class="price">$1,499</div>
-<p>A more complete website for a growing detailing business.</p>
-<ul>
-<li>Up to eight pages</li><li>Custom page layouts</li><li>Expanded service sections</li><li>Expanded photo gallery</li><li>Basic on-page SEO setup</li><li>Three revision rounds</li>
-</ul>
-<a class="button" href="#contact">Ask About Premium</a>
-</article>
+      <div class="gallery-item">
+        <img
+          src="https://images.pexels.com/photos/30685300/pexels-photo-30685300.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Clean and polished vehicle exterior"
+        >
+        <div class="gallery-caption">Exterior Finish Example</div>
+      </div>
+    </div>
 
-</div>
-</div>
-</section>
+    <p class="gallery-disclosure">
+      Photos are illustrative stock photography, not completed client projects.
+      The vehicle images do not represent a before-and-after transformation
+      of the same vehicle.
+    </p>
+  </section>
 
-<section>
-<div class="container">
-<div class="heading">
-<div class="eyebrow">Working with BrightPath</div>
-<h2>A Straightforward Website Design Process</h2>
-<p>We keep the process clear so you know what to expect before your website project starts.</p>
-</div>
-<div class="grid">
-<article class="card"><div class="process-number">1</div><h3>Tell Us About Your Business</h3><p>Share your services, business information, website goals, and examples of websites you like.</p></article>
-<article class="card"><div class="process-number">2</div><h3>Receive Your Project Quote</h3><p>We'll discuss your needs and send a written quote with the agreed features, price, and expected timeline.</p></article>
-<article class="card"><div class="process-number">3</div><h3>Approve and Get Started</h3><p>Once the project scope and terms are approved, we'll begin creating your website.</p></article>
-</div>
-</div>
-</section>
+  <section class="pricing" id="pricing">
+    <div class="section">
+      <div class="section-heading">
+        <div class="eyebrow">Sample Packages</div>
+        <h2>Detailing Packages</h2>
+        <div class="gold-line"></div>
+        <p>
+          Example package pricing to demonstrate how services and
+          estimates could be presented to customers.
+        </p>
+      </div>
 
-<section class="faq">
-<div class="container">
-<div class="heading">
-<div class="eyebrow">Common questions</div>
-<h2>Questions About Getting a Website</h2>
-</div>
-<div class="faq-list">
-<article class="faq-item"><h3>Do I need to provide photos of my detailing work?</h3><p>Your own vehicle and detailing photos are ideal for a gallery. We'll discuss the content and images needed for your project.</p></article>
-<article class="faq-item"><h3>Can my website show my detailing packages?</h3><p>Yes. Your website can list services, package descriptions, starting prices if you choose to publish them, and ways to request a custom quote.</p></article>
-<article class="faq-item"><h3>Can customers request a quote through my website?</h3><p>We can include contact and quote-request options. The exact setup will be confirmed in your project scope.</p></article>
-<article class="faq-item"><h3>Do you work with businesses outside your local area?</h3><p>Yes. BrightPath works with small businesses remotely throughout the United States.</p></article>
-<article class="faq-item"><h3>Do I have to sign up for monthly maintenance?</h3><p>No. Monthly maintenance is optional. Any ongoing services and their terms will be discussed separately.</p></article>
-</div>
-</div>
-</section>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Essential Detail</h3>
+          <div class="price">From $99</div>
+          <p>A refreshing clean for everyday drivers.</p>
+          <ul>
+            <li>Exterior hand wash</li>
+            <li>Interior vacuum</li>
+            <li>Surface wipe-down</li>
+            <li>Window cleaning</li>
+          </ul>
+          <a href="#contact" class="button">Request a Quote</a>
+        </div>
 
-<section class="contact" id="contact">
-<div class="container">
-<div class="contact-intro">
-<div class="eyebrow">Let's build your online presence</div>
-<h2>Ready to Put Your Detailing Business Online?</h2>
-<p>Tell us about your detailing business, the services you offer, and what you want your website to accomplish. We'll discuss your needs and provide a project quote before work begins.</p>
-</div>
+        <div class="price-card featured">
+          <h3>Complete Detail</h3>
+          <div class="price">From $179</div>
+          <p>A more thorough interior and exterior refresh.</p>
+          <ul>
+            <li>Everything in Essential</li>
+            <li>Detailed interior cleaning</li>
+            <li>Door jamb cleaning</li>
+            <li>Exterior protection</li>
+          </ul>
+          <a href="#contact" class="button">Request a Quote</a>
+        </div>
 
-<form class="quote-form" action="https://formspree.io/f/xpppkwje" method="POST">
-<div class="form-disclaimer">
-<strong>Demonstration form:</strong> This is a sample quote form on a demonstration website. Submissions are sent to BrightPath Web Design for demonstration purposes, not to an auto-detailing service. This is not a request for actual detailing services.
-</div>
+        <div class="price-card">
+          <h3>Premium Detail</h3>
+          <div class="price">From $299</div>
+          <p>Extra attention for a premium finish.</p>
+          <ul>
+            <li>Everything in Complete</li>
+            <li>Additional paint care</li>
+            <li>Enhanced finish</li>
+            <li>Customized detailing</li>
+          </ul>
+          <a href="#contact" class="button">Request a Quote</a>
+        </div>
+      </div>
 
-<input type="hidden" name="_subject" value="Demo Detailing Quote Request">
+      <p class="gallery-disclosure">
+        All package prices are examples for this website demonstration.
+        Actual pricing would depend on the business, vehicle size, and condition.
+      </p>
+    </div>
+  </section>
 
-<label for="customer-name">Your Name *</label>
-<input id="customer-name" type="text" name="name" placeholder="Your name" required>
+  <section class="contact" id="contact">
+    <div class="section">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="eyebrow">Get In Touch</div>
+          <h2>Ready to Refresh Your Ride?</h2>
+          <div class="gold-line" style="margin-left:0;"></div>
+          <p>
+            Have a vehicle that needs attention? Use the sample request
+            form to see how customers could reach an auto detailing
+            business through its website.
+          </p>
+          <p>
+            <strong>Request an estimate</strong><br>
+            Tell us about your vehicle and the services you're interested in.
+          </p>
+          <p>
+            <strong>Designed by BrightPath Web Design</strong><br>
+            Professional website design for small businesses.
+          </p>
+        </div>
 
-<label for="customer-email">Email Address *</label>
-<input id="customer-email" type="email" name="email" placeholder="you@example.com" required>
+        <form action="https://formspree.io/f/xpppkwje" method="POST">
+          <input type="hidden" name="_subject" value="Auto Detailing Demo Quote Request">
 
-<label for="customer-phone">Phone Number (Optional)</label>
-<input id="customer-phone" type="tel" name="phone" placeholder="Your phone number">
+          <div class="form-row">
+            <div>
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Full name" required>
+            </div>
 
-<label for="service-needed">Example Service Needed</label>
-<select id="service-needed" name="service_needed">
-<option value="">Select an example service</option>
-<option value="Interior detailing">Interior detailing</option>
-<option value="Exterior detailing">Exterior detailing</option>
-<option value="Full vehicle detail">Full vehicle detail</option>
-<option value="Ceramic coating">Ceramic coating</option>
-<option value="Paint correction">Paint correction</option>
-<option value="Other">Other</option>
-</select>
+            <div>
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Email address" required>
+            </div>
+          </div>
 
-<label for="vehicle-details">Vehicle Details</label>
-<input id="vehicle-details" type="text" name="vehicle_details" placeholder="Example: 2022 Honda Accord">
+          <div class="form-row">
+            <div>
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Phone number">
+            </div>
 
-<label for="project-details">Additional Details *</label>
-<textarea id="project-details" name="message" placeholder="Example: Describe the type of quote or detailing website you would be interested in..." required></textarea>
+            <div>
+              <label for="vehicle">Vehicle</label>
+              <input type="text" id="vehicle" name="vehicle" placeholder="Year, make, and model">
+            </div>
+          </div>
 
-<button class="button" type="submit">Submit Demonstration Form</button>
-<p class="form-required">* Required fields. By submitting, you understand this is a demonstration form and your message goes to BrightPath Web Design.</p>
-</form>
+          <label for="service">Service Interested In</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option>Exterior Detailing</option>
+            <option>Interior Detailing</option>
+            <option>Paint Correction</option>
+            <option>Wax & Protection</option>
+            <option>Full Detail Package</option>
+            <option>Maintenance Details</option>
+            <option>Not Sure Yet</option>
+          </select>
 
-<a class="email" href="mailto:brightpathwebdesign@proton.me">BrightPath Web Design: brightpathwebdesign@proton.me</a>
-</div>
-</section>
+          <label for="details">Tell Us About Your Vehicle</label>
+          <textarea id="details" name="details" placeholder="Describe what you're looking for..."></textarea>
 
-</main>
+          <button type="submit" class="button">Submit Quote Request</button>
 
-<footer>
-<div class="container">
-<p>© 2026 BrightPath Web Design. All rights reserved.</p>
-<p style="margin-top:10px"><a href="index.html">Visit BrightPath Homepage</a></p>
-<p style="margin-top:12px;font-size:.8rem">Website package prices are starting prices. Final project scope, content, revisions, delivery schedule, payment terms, and third-party services are confirmed in a written agreement before work begins.</p>
-</div>
-</footer>
+          <p class="form-note">
+            DEMO FORM: Submissions are sent to BrightPath Web Design,
+            not to a real auto detailing company. This does not create
+            an actual appointment. Please do not submit sensitive personal information.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">ELITE <span>AUTO DETAILING</span></div>
+    <p>Premium Automotive Care | Sample Website Design</p>
+    <a href="https://brightpathwebdesignco.github.io/" class="back-home">
+      ← Return to BrightPath Web Design
+    </a>
+    <p>
+      © 2026 BrightPath Web Design. Website demonstration only.
+    </p>
+  </footer>
 
 </body>
 </html>
