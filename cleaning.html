@@ -1,0 +1,994 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FreshNest Cleaning Co. sample residential and commercial cleaning website.">
+  <title>FreshNest Cleaning Co. | BrightPath Web Design Demo</title>
+
+  <style>
+    :root {
+      --green: #718b75;
+      --green-dark: #405c49;
+      --green-light: #dce7dc;
+      --cream: #f7f5ee;
+      --white: #ffffff;
+      --charcoal: #29342e;
+      --muted: #68736b;
+      --border: #e4e8df;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .demo-notice {
+      background: var(--green-dark);
+      color: white;
+      text-align: center;
+      padding: 11px 15px;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+    }
+
+    header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: var(--green-dark);
+      line-height: 1.2;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--green);
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    nav a {
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--charcoal);
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    .nav-button {
+      background: var(--green-dark);
+      color: white;
+      padding: 10px 17px;
+      border-radius: 4px;
+    }
+
+    .hero {
+      min-height: 610px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(27,42,32,0.84), rgba(27,42,32,0.25)),
+        url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 90px 24px;
+      color: white;
+    }
+
+    .eyebrow {
+      color: #d7e7d4;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 17px;
+    }
+
+    h1 {
+      max-width: 720px;
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.08;
+      margin-bottom: 23px;
+    }
+
+    h1 span {
+      color: #d6e5ce;
+    }
+
+    .hero p {
+      max-width: 590px;
+      font-size: 17px;
+      color: #f0f2ed;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green-dark);
+      color: white;
+      padding: 14px 24px;
+      border-radius: 4px;
+      font-weight: bold;
+      border: 1px solid var(--green-dark);
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: var(--green);
+      border-color: var(--green);
+      transform: translateY(-2px);
+    }
+
+    .button-light {
+      background: white;
+      color: var(--green-dark);
+      border-color: white;
+      margin-left: 10px;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 85px 24px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--green);
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      max-width: 660px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    .green-line {
+      width: 65px;
+      height: 3px;
+      background: var(--green);
+      margin: 19px auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-grid img {
+      width: 100%;
+      height: 410px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .about-copy .eyebrow {
+      color: var(--green);
+    }
+
+    .about-copy h2 {
+      font-size: 37px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .feature {
+      background: var(--green-light);
+      padding: 18px 12px;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--green-dark);
+    }
+
+    .services {
+      background: #eef1e9;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 30px;
+      transition: 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+    }
+
+    .service-icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+
+    .service-card h3 {
+      color: var(--green-dark);
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 7px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-caption {
+      padding: 16px 19px;
+      font-weight: bold;
+      color: var(--green-dark);
+    }
+
+    .disclosure {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 22px;
+    }
+
+    .pricing {
+      background: #eef1e9;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .price-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 33px 25px;
+      text-align: center;
+    }
+
+    .price-card.featured {
+      border: 2px solid var(--green);
+      transform: translateY(-7px);
+    }
+
+    .popular {
+      display: inline-block;
+      background: var(--green-dark);
+      color: white;
+      padding: 5px 13px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .price-card h3 {
+      font-size: 21px;
+      color: var(--green-dark);
+      margin-bottom: 13px;
+    }
+
+    .price {
+      font-size: 31px;
+      font-weight: bold;
+      margin-bottom: 13px;
+      color: var(--charcoal);
+    }
+
+    .price-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin-bottom: 25px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .price-card li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact {
+      background: var(--green-dark);
+      color: white;
+    }
+
+    .contact .section {
+      padding-top: 85px;
+      padding-bottom: 85px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .contact-info .eyebrow {
+      color: #d7e7d4;
+    }
+
+    .contact-info h2 {
+      font-size: 39px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      color: #e0e9df;
+      margin-bottom: 18px;
+    }
+
+    .contact-info strong {
+      color: white;
+    }
+
+    form {
+      background: white;
+      color: var(--charcoal);
+      border-radius: 7px;
+      padding: 30px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 7px;
+      color: var(--green-dark);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: #fafbf8;
+      color: var(--charcoal);
+      font: inherit;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 1px solid var(--green);
+      border-color: var(--green);
+    }
+
+    textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    form button {
+      width: 100%;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 11px;
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    footer {
+      background: #26332b;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span {
+      color: #c9ddc5;
+    }
+
+    footer p {
+      color: #c5d0c6;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .back-home {
+      display: inline-block;
+      color: #d6e5ce;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid, .price-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 520px;
+      }
+
+      .hero-content {
+        padding: 65px 21px;
+      }
+
+      .button-light {
+        margin: 12px 0 0;
+      }
+
+      .section {
+        padding: 65px 20px;
+      }
+
+      .service-grid, .price-grid, .gallery-grid, .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item img {
+        height: 260px;
+      }
+
+      .about-grid img {
+        height: 280px;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .features {
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="demo-notice">
+    DEMO WEBSITE — SAMPLE DESIGN BY BRIGHTPATH WEB DESIGN — NOT A REAL CLEANING COMPANY
+  </div>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        FRESHNEST
+        <span>CLEANING CO.</span>
+      </a>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="nav-button">Get a Free Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">A Fresher Space Starts Here</div>
+      <h1>A Cleaner Home. <span>A Happier You.</span></h1>
+      <p>
+        Enjoy the comfort of a beautifully refreshed space.
+        Explore professional residential and commercial cleaning
+        services designed around your needs.
+      </p>
+      <a href="#contact" class="button">Request a Free Quote</a>
+      <a href="#services" class="button button-light">Explore Our Services</a>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="about-grid">
+      <img
+        src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=85"
+        alt="Cleaning professional caring for a home"
+      >
+
+      <div class="about-copy">
+        <div class="eyebrow">Welcome to FreshNest</div>
+        <h2>More Time for What Matters Most.</h2>
+
+        <p>
+          Life gets busy. Keeping your home or workplace clean
+          shouldn't have to take all your time.
+        </p>
+
+        <p>
+          FreshNest Cleaning Co. is a sample cleaning business
+          concept focused on dependable service, attention to
+          detail, and making every space feel welcoming.
+        </p>
+
+        <p>
+          Whether it's routine upkeep or a detailed top-to-bottom
+          cleaning, this website demonstrates how a cleaning
+          business can connect with customers online.
+        </p>
+
+        <a href="#contact" class="button">Let's Get Started</a>
+
+        <div class="features">
+          <div class="feature">Home Cleaning</div>
+          <div class="feature">Office Cleaning</div>
+          <div class="feature">Deep Cleaning</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section">
+      <div class="section-heading">
+        <div class="eyebrow">What We Do</div>
+        <h2>Cleaning Services for Every Space</h2>
+        <div class="green-line"></div>
+        <p>
+          Flexible cleaning options for homes, offices, and
+          spaces that deserve a little extra attention.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">🏡</div>
+          <h3>Residential Cleaning</h3>
+          <p>
+            Routine cleaning for kitchens, bathrooms, bedrooms,
+            living areas, and everyday household spaces.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>Deep Cleaning</h3>
+          <p>
+            Extra attention to buildup, overlooked areas,
+            fixtures, surfaces, and hard-to-reach spaces.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <h3>Commercial Cleaning</h3>
+          <p>
+            Cleaning solutions for offices, small businesses,
+            workspaces, and professional environments.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📦</div>
+          <h3>Move-In Cleaning</h3>
+          <p>
+            Prepare a new space with detailed cleaning before
+            moving in and getting settled.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🚪</div>
+          <h3>Move-Out Cleaning</h3>
+          <p>
+            A thorough cleaning option for homes and apartments
+            when it's time to move on.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🧽</div>
+          <h3>Recurring Cleaning</h3>
+          <p>
+            Weekly, biweekly, or monthly cleaning options
+            to help keep spaces looking their best.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="section-heading">
+      <div class="eyebrow">A Look Around</div>
+      <h2>Fresh Spaces. Beautiful Results.</h2>
+      <div class="green-line"></div>
+      <p>
+        A sample gallery showing how a cleaning company
+        can feature its services and spaces.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+          alt="Beautiful clean living room"
+        >
+        <div class="gallery-caption">A Fresh Living Space</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+          alt="Bright and clean modern home interior"
+        >
+        <div class="gallery-caption">Bright and Welcoming Interiors</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
+          alt="Clean and organized home interior"
+        >
+        <div class="gallery-caption">Beautifully Maintained Spaces</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+          alt="Beautiful modern home"
+        >
+        <div class="gallery-caption">A Home to Feel Good In</div>
+      </div>
+    </div>
+
+    <p class="disclosure">
+      All gallery photographs are illustrative stock images.
+      They are not photographs of completed FreshNest customer projects.
+    </p>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="section">
+      <div class="section-heading">
+        <div class="eyebrow">Simple Sample Packages</div>
+        <h2>Cleaning Packages</h2>
+        <div class="green-line"></div>
+        <p>
+          Example packages that demonstrate how a cleaning
+          company could present services and starting prices.
+        </p>
+      </div>
+
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Fresh Start</h3>
+          <div class="price">From $99</div>
+          <p>Great for smaller spaces and routine upkeep.</p>
+
+          <ul>
+            <li>General surface cleaning</li>
+            <li>Kitchen cleaning</li>
+            <li>Bathroom cleaning</li>
+            <li>Vacuuming and floors</li>
+            <li>Light dusting</li>
+          </ul>
+
+          <a href="#contact" class="button">Request a Quote</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="popular">MOST POPULAR</div>
+          <h3>FreshNest Deep Clean</h3>
+          <div class="price">From $179</div>
+          <p>A more detailed cleaning experience.</p>
+
+          <ul>
+            <li>Everything in Fresh Start</li>
+            <li>Detailed surface cleaning</li>
+            <li>Extra bathroom attention</li>
+            <li>Detailed kitchen cleaning</li>
+            <li>Additional dusting and floors</li>
+          </ul>
+
+          <a href="#contact" class="button">Request a Quote</a>
+        </div>
+
+        <div class="price-card">
+          <h3>Complete Refresh</h3>
+          <div class="price">From $249</div>
+          <p>A comprehensive cleaning for larger projects.</p>
+
+          <ul>
+            <li>Customized cleaning plan</li>
+            <li>Detailed room cleaning</li>
+            <li>Kitchen and bathroom focus</li>
+            <li>Additional attention to detail</li>
+            <li>Customized service options</li>
+          </ul>
+
+          <a href="#contact" class="button">Request a Quote</a>
+        </div>
+      </div>
+
+      <p class="disclosure">
+        All package prices are examples for this website demonstration.
+        Actual pricing would depend on property size, condition,
+        location, and requested services.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <div class="eyebrow">Let's Talk About Your Space</div>
+          <h2>Ready for a Fresh Start?</h2>
+
+          <div class="green-line" style="margin-left:0; background:#d7e7d4;"></div>
+
+          <p>
+            Tell us a little about your cleaning needs.
+            Use the sample quote form to see how customers
+            could request cleaning services through a website.
+          </p>
+
+          <p>
+            <strong>Residential or Commercial</strong><br>
+            Flexible example service options for different spaces.
+          </p>
+
+          <p>
+            <strong>Request an Estimate</strong><br>
+            Share your project details and the type of cleaning
+            you're interested in.
+          </p>
+
+          <p>
+            <strong>Designed by BrightPath Web Design</strong><br>
+            Professional websites for growing small businesses.
+          </p>
+        </div>
+
+        <form action="https://formspree.io/f/xpppkwje" method="POST">
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="FreshNest Cleaning Demo Quote Request"
+          >
+
+          <div class="form-row">
+            <div>
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Full name"
+                required
+              >
+            </div>
+
+            <div>
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email address"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Phone number"
+              >
+            </div>
+
+            <div>
+              <label for="property">Property Type</label>
+              <select id="property" name="property" required>
+                <option value="">Choose one</option>
+                <option>House</option>
+                <option>Apartment</option>
+                <option>Office</option>
+                <option>Commercial Property</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="service">Cleaning Service</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option>Residential Cleaning</option>
+            <option>Deep Cleaning</option>
+            <option>Commercial Cleaning</option>
+            <option>Move-In Cleaning</option>
+            <option>Move-Out Cleaning</option>
+            <option>Recurring Cleaning</option>
+            <option>Not Sure Yet</option>
+          </select>
+
+          <label for="details">Tell Us About Your Cleaning Needs</label>
+          <textarea
+            id="details"
+            name="details"
+            placeholder="Describe the space, approximate size, and services you're interested in..."
+          ></textarea>
+
+          <button type="submit" class="button">
+            Submit Quote Request
+          </button>
+
+          <p class="form-note">
+            DEMO FORM: Submissions are sent to BrightPath Web Design,
+            not to a real cleaning company. This does not create an
+            actual cleaning appointment. Please do not submit sensitive
+            personal information.
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">FRESHNEST <span>CLEANING CO.</span></div>
+    <p>A Fresher Space Starts Here.</p>
+
+    <a
+      href="https://brightpathwebdesignco.github.io/"
+      class="back-home"
+    >
+      ← Return to BrightPath Web Design
+    </a>
+
+    <p>© 2026 BrightPath Web Design. Website demonstration only.</p>
+  </footer>
+
+</body>
+</html>
