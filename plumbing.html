@@ -1,0 +1,861 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ClearFlow Plumbing Co. sample website featuring residential plumbing, repairs, installations, and quote requests.">
+  <title>ClearFlow Plumbing Co. | Plumbing Services</title>
+  <style>
+    :root {
+      --navy: #10243a;
+      --navy-dark: #091827;
+      --blue: #1976a8;
+      --blue-light: #eaf5fa;
+      --copper: #c77c4b;
+      --copper-light: #e6ad80;
+      --white: #ffffff;
+      --cream: #f7f8f7;
+      --text: #263747;
+      --muted: #687989;
+      --border: #e3e9ed;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background: var(--white);
+    }
+
+    a { text-decoration: none; }
+
+    .demo-banner {
+      background: var(--copper);
+      color: #fff;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.3px;
+    }
+
+    .container {
+      width: min(1140px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--navy-dark);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: var(--white);
+      font-size: 21px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo span { color: var(--copper-light); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: #e0e9f0;
+      font-size: 13px;
+      font-weight: 700;
+      transition: color .2s;
+    }
+
+    nav a:hover { color: var(--copper-light); }
+
+    nav .nav-button {
+      background: var(--copper);
+      color: var(--white);
+      padding: 10px 15px;
+      border-radius: 4px;
+    }
+
+    nav .nav-button:hover {
+      background: var(--copper-light);
+      color: var(--navy-dark);
+    }
+
+    .hero {
+      color: var(--white);
+      background:
+        linear-gradient(100deg, rgba(7,22,37,.95), rgba(12,42,65,.73)),
+        url("https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=2000&q=85");
+      background-size: cover;
+      background-position: center;
+      padding: 115px 0 120px;
+    }
+
+    .hero-content { max-width: 720px; }
+
+    .eyebrow {
+      color: var(--copper-light);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    h1 {
+      font-size: clamp(39px, 6vw, 65px);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      margin-bottom: 23px;
+    }
+
+    .hero p {
+      color: #d9e3eb;
+      font-size: 18px;
+      max-width: 620px;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 21px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: .2s;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .button-copper {
+      background: var(--copper);
+      color: var(--white);
+    }
+
+    .button-copper:hover {
+      background: var(--copper-light);
+      color: var(--navy-dark);
+    }
+
+    .button-outline {
+      border: 1px solid rgba(255,255,255,.7);
+      color: var(--white);
+      margin-left: 10px;
+    }
+
+    .button-outline:hover { background: rgba(255,255,255,.12); }
+
+    .trust-strip {
+      background: var(--blue-light);
+      padding: 23px 0;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      text-align: center;
+    }
+
+    .trust-item {
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .trust-item span {
+      display: block;
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    section { padding: 82px 0; }
+
+    .section-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 43px;
+    }
+
+    .section-heading .eyebrow { color: var(--blue); }
+
+    h2 {
+      color: var(--navy);
+      font-size: clamp(29px, 4vw, 41px);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p { color: var(--muted); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 29px;
+      background: var(--white);
+      box-shadow: 0 8px 24px rgba(12,35,55,.045);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 13px 28px rgba(12,35,55,.09);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 23px;
+      margin-bottom: 19px;
+    }
+
+    .service-card h3 {
+      color: var(--navy);
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .about { background: var(--cream); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-image {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 14px 32px rgba(12,35,55,.13);
+    }
+
+    .about-copy .eyebrow { color: var(--blue); }
+
+    .about-copy p {
+      color: var(--muted);
+      margin: 15px 0;
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 22px 0 27px;
+    }
+
+    .check-list li {
+      color: var(--text);
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--copper);
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 7px;
+      display: block;
+    }
+
+    .gallery-note {
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+      margin-top: 17px;
+    }
+
+    .pricing { background: var(--blue-light); }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .price-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 29px;
+    }
+
+    .price-card h3 {
+      color: var(--navy);
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .price-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .price {
+      color: var(--navy);
+      font-size: 32px;
+      font-weight: 800;
+      margin: 16px 0;
+    }
+
+    .price-card .button { margin-top: 15px; }
+
+    .quote-section { background: var(--white); }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .quote-copy .eyebrow { color: var(--blue); }
+
+    .quote-copy p {
+      color: var(--muted);
+      margin: 15px 0;
+    }
+
+    .quote-details {
+      margin-top: 25px;
+      padding: 22px;
+      background: var(--blue-light);
+      border-left: 4px solid var(--copper);
+      border-radius: 4px;
+    }
+
+    .quote-details strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    .quote-details span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    form {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 30px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .form-group { margin-bottom: 16px; }
+
+    label {
+      display: block;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #d6dfe5;
+      border-radius: 4px;
+      background: var(--white);
+      color: var(--text);
+      font: inherit;
+      font-size: 14px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid rgba(25,118,168,.22);
+      border-color: var(--blue);
+    }
+
+    textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    form .button {
+      width: 100%;
+      font-size: 15px;
+    }
+
+    .form-disclaimer {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 13px;
+      line-height: 1.5;
+    }
+
+    .final-cta {
+      background:
+        linear-gradient(100deg, rgba(8,24,40,.95), rgba(15,55,78,.88)),
+        url("https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1800&q=85");
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .final-cta h2 { color: var(--white); }
+
+    .final-cta p {
+      color: #d5e0e8;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    footer {
+      background: var(--navy-dark);
+      color: #aab8c6;
+      padding: 28px 0;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    footer a { color: var(--copper-light); }
+
+    @media (max-width: 900px) {
+      .nav { justify-content: center; }
+      nav { justify-content: center; }
+      .services-grid, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 650px) {
+      .hero { padding: 85px 0; }
+      .hero p { font-size: 16px; }
+      section { padding: 65px 0; }
+
+      .services-grid, .pricing-grid,
+      .about-grid, .quote-grid,
+      .gallery-grid, .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image { height: 290px; }
+      .gallery-grid img { height: 250px; }
+
+      nav { gap: 10px 13px; }
+      nav a { font-size: 12px; }
+      .logo { font-size: 19px; }
+
+      .button-outline { margin: 12px 0 0; }
+      .form-row { grid-template-columns: 1fr; }
+      form { padding: 22px; }
+
+      .footer-inner {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="demo-banner">
+    DEMO WEBSITE — SAMPLE DESIGN BY BRIGHTPATH WEB DESIGN — NOT A REAL PLUMBING COMPANY
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="logo" href="plumbing.html">ClearFlow <span>Plumbing Co.</span></a>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Pricing</a>
+        <a class="nav-button" href="#quote">Request a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Your Home. Our Priority.</div>
+          <h1>Reliable Plumbing Solutions for Your Home</h1>
+          <p>
+            From everyday plumbing repairs to larger installations,
+            ClearFlow Plumbing Co. is a sample of how a professional
+            plumbing business can present its services online.
+          </p>
+          <a href="#quote" class="button button-copper">Request a Service Quote</a>
+          <a href="#services" class="button button-outline">Explore Services</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          Residential Plumbing
+          <span>Repairs and improvements</span>
+        </div>
+        <div class="trust-item">
+          Clear Communication
+          <span>Simple service inquiries</span>
+        </div>
+        <div class="trust-item">
+          Project Solutions
+          <span>From leaks to installations</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">What We Do</div>
+          <h2>Plumbing Services for Everyday Needs</h2>
+          <p>
+            A well-organized service list helps visitors quickly find
+            the type of plumbing work they're looking for.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">🔧</div>
+            <h3>Plumbing Repairs</h3>
+            <p>Help with common household plumbing concerns, fixture problems, and general repairs.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">💧</div>
+            <h3>Leak Detection & Repair</h3>
+            <p>Identify and address visible plumbing leaks and water-related concerns.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🚿</div>
+            <h3>Fixture Installation</h3>
+            <p>Installation and replacement of faucets, sinks, showers, and other plumbing fixtures.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🚽</div>
+            <h3>Drain Cleaning</h3>
+            <p>Solutions for slow or clogged drains in kitchens, bathrooms, and other areas.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🔥</div>
+            <h3>Water Heater Service</h3>
+            <p>Water heater troubleshooting, replacement, and installation inquiries.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🏠</div>
+            <h3>Bathroom Plumbing</h3>
+            <p>Plumbing updates and fixture work for bathroom improvements and renovations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <img
+            class="about-image"
+            src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1100&q=85"
+            alt="Plumbing professional working on a home improvement project"
+          >
+        </div>
+
+        <div class="about-copy">
+          <div class="eyebrow">About ClearFlow</div>
+          <h2>A Professional Approach to Plumbing</h2>
+          <p>
+            ClearFlow Plumbing Co. is a fictional plumbing business created
+            to demonstrate a modern, customer-friendly website for a
+            residential plumbing service provider.
+          </p>
+          <p>
+            A strong plumbing website should help customers understand
+            available services, learn about the business, and easily
+            request more information.
+          </p>
+
+          <ul class="check-list">
+            <li>Easy-to-find service information</li>
+            <li>Clear calls to action</li>
+            <li>Professional project imagery</li>
+            <li>Simple quote request process</li>
+            <li>Responsive design for mobile visitors</li>
+          </ul>
+
+          <a href="#quote" class="button button-copper">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Project Gallery</div>
+          <h2>A Look at Plumbing Work</h2>
+          <p>
+            Use a visual gallery to show examples of installations,
+            plumbing details, and home improvement work.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <img
+            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
+            alt="Modern bathroom interior"
+            loading="lazy"
+          >
+          <img
+            src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85"
+            alt="Modern bathroom sink and fixtures"
+            loading="lazy"
+          >
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85"
+            alt="Contemporary home interior"
+            loading="lazy"
+          >
+        </div>
+
+        <p class="gallery-note">
+          Gallery images are illustrative stock photography, not verified
+          ClearFlow customer projects.
+        </p>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Example Pricing</div>
+          <h2>Simple Starting Estimates</h2>
+          <p>
+            These sample prices demonstrate how a plumbing business
+            could communicate starting estimates online.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Basic Repair</h3>
+            <p>For smaller plumbing repair inquiries.</p>
+            <div class="price">From $99</div>
+            <p>Example starting estimate for a straightforward repair visit.</p>
+            <a href="#quote" class="button button-copper">Ask About Repairs</a>
+          </article>
+
+          <article class="price-card">
+            <h3>Fixture Installation</h3>
+            <p>For common fixture replacement projects.</p>
+            <div class="price">From $149</div>
+            <p>Example starting estimate for a basic fixture installation.</p>
+            <a href="#quote" class="button button-copper">Ask About Installation</a>
+          </article>
+
+          <article class="price-card">
+            <h3>Water Heater Project</h3>
+            <p>For water heater service inquiries.</p>
+            <div class="price">From $399</div>
+            <p>Example starting estimate; equipment and project requirements affect the final price.</p>
+            <a href="#quote" class="button button-copper">Request an Estimate</a>
+          </article>
+        </div>
+
+        <p class="gallery-note">
+          All prices are fictional examples for this website demonstration.
+          Actual plumbing prices depend on the job, materials, equipment,
+          location, and service requirements.
+        </p>
+      </div>
+    </section>
+
+    <section class="quote-section" id="quote">
+      <div class="container quote-grid">
+
+        <div class="quote-copy">
+          <div class="eyebrow">Request Information</div>
+          <h2>Tell Us What Plumbing Help You Need</h2>
+          <p>
+            A convenient quote form makes it easier for potential
+            customers to describe a project and request follow-up.
+          </p>
+          <p>
+            Share a few details about the service you're looking for.
+            The example form demonstrates how a plumbing business
+            could collect customer inquiries.
+          </p>
+
+          <div class="quote-details">
+            <strong>Need help with a plumbing project?</strong>
+            <span>
+              Describe the issue or installation you're considering
+              and provide a way to contact you.
+            </span>
+          </div>
+        </div>
+
+        <form action="https://formspree.io/f/xpppkwje" method="POST">
+          <input type="hidden" name="_subject" value="Plumbing Demo Quote Request">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+            </div>
+
+            <div class="form-group">
+              <label for="property">Property Type</label>
+              <select id="property" name="property_type">
+                <option value="">Select one</option>
+                <option>House</option>
+                <option>Apartment</option>
+                <option>Commercial Property</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">What Service Do You Need? *</label>
+            <select id="service" name="service" required>
+              <option value="">Choose a service</option>
+              <option>Plumbing Repair</option>
+              <option>Leak Detection or Repair</option>
+              <option>Fixture Installation</option>
+              <option>Drain Cleaning</option>
+              <option>Water Heater Service</option>
+              <option>Bathroom Plumbing</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="details">Project Details</label>
+            <textarea id="details" name="project_details" placeholder="Tell us a little about the plumbing work you need..."></textarea>
+          </div>
+
+          <button type="submit" class="button button-copper">Submit Quote Request</button>
+
+          <p class="form-disclaimer">
+            DEMO NOTICE: This is a sample website. Form submissions are
+            sent to BrightPath Web Design for demonstration purposes,
+            not to a real plumbing company. Submitting this form does
+            not schedule service or create an appointment. Please do
+            not enter sensitive personal information.
+          </p>
+        </form>
+
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <div class="eyebrow">Clear Information. Easy Contact.</div>
+        <h2>Let's Get Your Plumbing Project Started</h2>
+        <p>
+          A professional website can help a plumbing business showcase
+          its services and make it easier for customers to reach out.
+        </p>
+        <a href="#quote" class="button button-copper">Request a Quote</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 ClearFlow Plumbing Co. Sample Website.</div>
+      <div>
+        Website concept by
+        <a href="https://brightpathwebdesignco.github.io">BrightPath Web Design</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
