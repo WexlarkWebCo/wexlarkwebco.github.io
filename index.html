@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="BrightPath Web Design creates modern, professional websites for small businesses.">
-  <title>BrightPath Web Design | Websites That Help Businesses Grow</title>
+  <title>BrightPath Web Design | Professional Small Business Websites</title>
 
   <style>
     :root {
       --navy: #142943;
       --navy-deep: #0d1e33;
       --blue: #315fae;
-      --blue-hover: #264d94;
+      --blue-hover: #234887;
       --blue-light: #eaf1fb;
       --background: #f5f7fa;
       --white: #ffffff;
       --off-white: #edf1f5;
+      --section-blue: #e2e9f2;
       --text: #25364a;
       --muted: #68788b;
       --border: #dfe5ed;
@@ -38,7 +39,10 @@
       line-height: 1.7;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     .container {
       width: min(1120px, 90%);
@@ -185,7 +189,11 @@
       gap: 14px;
     }
 
-    /* Services */
+    /* What We Do */
+
+    #services {
+      background: var(--section-blue);
+    }
 
     .services-grid {
       display: grid;
@@ -250,7 +258,7 @@
       margin-bottom: 18px;
     }
 
-    /* Demos */
+    /* Sample Website Designs */
 
     .demo-grid {
       display: grid;
@@ -294,8 +302,6 @@
       margin-bottom: 20px;
     }
 
-    /* These are the darker royal-blue demo buttons */
-
     .demo-button {
       display: inline-block;
       background: #315fae;
@@ -312,9 +318,9 @@
       transform: translateY(-2px);
     }
 
-    /* Process */
+    /* How It Works */
 
-    .process { background: var(--off-white); }
+    .process { background: var(--section-blue); }
 
     .process-grid {
       display: grid;
@@ -327,6 +333,7 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 25px;
+      box-shadow: var(--shadow);
     }
 
     .step-number {
@@ -362,9 +369,7 @@
       box-shadow: var(--shadow);
     }
 
-    .price-card.featured {
-      border: 2px solid var(--blue);
-    }
+    .price-card.featured { border: 2px solid var(--blue); }
 
     .price-card h3 { font-size: 1.3rem; }
 
@@ -518,11 +523,18 @@
     footer p { color: #c2ccd8; font-size: .85rem; }
     footer a:not(.logo) { color: #d5e2f5; }
 
+    /* Mobile */
+
     @media (max-width: 850px) {
       .nav-links { gap: 13px; font-size: .82rem; }
-      .services-grid, .demo-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .services-grid,
+      .demo-grid { grid-template-columns: repeat(2, 1fr); }
+
       .process-grid { grid-template-columns: repeat(2, 1fr); }
-      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
@@ -533,14 +545,24 @@
       }
 
       .nav-links { flex-wrap: wrap; gap: 12px 17px; }
+
       .hero { padding: 80px 0; }
-      .services-grid, .demo-grid, .process-grid,
-      .pricing-grid, .maintenance-grid, .form-row {
+
+      .services-grid,
+      .demo-grid,
+      .process-grid,
+      .pricing-grid,
+      .maintenance-grid,
+      .form-row {
         grid-template-columns: 1fr;
       }
 
       .section { padding: 65px 0; }
-      .footer-content { align-items: flex-start; flex-direction: column; }
+
+      .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -596,26 +618,31 @@
           <h3>Custom Website Design</h3>
           <p>Modern website designs created to fit your business and its goals.</p>
         </article>
+
         <article class="service-card">
           <div class="service-icon">▣</div>
           <h3>Mobile-Friendly Design</h3>
           <p>Responsive layouts that look great on phones, tablets, and computers.</p>
         </article>
+
         <article class="service-card">
           <div class="service-icon">⌕</div>
           <h3>Search-Friendly Structure</h3>
           <p>Clear page structure and foundational SEO practices to help customers find you.</p>
         </article>
+
         <article class="service-card">
           <div class="service-icon">✉</div>
           <h3>Contact Forms</h3>
           <p>Simple ways for potential customers to reach out and request your services.</p>
         </article>
+
         <article class="service-card">
           <div class="service-icon">↗</div>
           <h3>Website Improvements</h3>
           <p>Refresh an outdated website with a cleaner, more professional design.</p>
         </article>
+
         <article class="service-card">
           <div class="service-icon">⚙</div>
           <h3>Website Maintenance</h3>
@@ -635,8 +662,15 @@
         <div class="about-copy">
           <div class="eyebrow">About BrightPath</div>
           <h2>A Better Online Presence Starts Here.</h2>
-          <p>Your website is often the first impression customers have of your business. It should look professional, communicate clearly, and make it easy for people to take the next step.</p>
-          <p>BrightPath Web Design focuses on clean layouts, practical features, and straightforward service for small businesses.</p>
+          <p>
+            Your website is often the first impression customers have of your
+            business. It should look professional, communicate clearly, and
+            make it easy for people to take the next step.
+          </p>
+          <p>
+            BrightPath Web Design focuses on clean layouts, practical features,
+            and straightforward service for small businesses.
+          </p>
           <a class="btn" href="#contact">Let's Talk About Your Website</a>
         </div>
       </div>
@@ -704,16 +738,19 @@
           <h3>Tell Us About Your Business</h3>
           <p>Share your goals, services, and the kind of website you have in mind.</p>
         </div>
+
         <div class="process-step">
           <div class="step-number">02</div>
           <h3>Plan the Design</h3>
           <p>We work out the layout, content, and features that fit your needs.</p>
         </div>
+
         <div class="process-step">
           <div class="step-number">03</div>
           <h3>Build Your Website</h3>
           <p>Your website is designed and prepared for your review.</p>
         </div>
+
         <div class="process-step">
           <div class="step-number">04</div>
           <h3>Launch</h3>
@@ -791,11 +828,13 @@
           <div class="price">$49/month</div>
           <p>Includes up to 30 minutes of website update time per month.</p>
         </article>
+
         <article class="maintenance-card">
           <h3>Business</h3>
           <div class="price">$99/month</div>
           <p>Includes up to 1 hour of website update time per month.</p>
         </article>
+
         <article class="maintenance-card">
           <h3>Priority</h3>
           <div class="price">$149/month</div>
@@ -823,8 +862,14 @@
       <div class="contact-grid">
         <div class="contact-copy">
           <h2>Have a Project in Mind?</h2>
-          <p>Whether you need a brand-new website or want to improve an existing one, we'd be glad to hear about your project.</p>
-          <p>Email: <a href="mailto:brightpathwebdesign@proton.me">brightpathwebdesign@proton.me</a></p>
+          <p>
+            Whether you need a brand-new website or want to improve an
+            existing one, we'd be glad to hear about your project.
+          </p>
+          <p>
+            Email:
+            <a href="mailto:brightpathwebdesign@proton.me">brightpathwebdesign@proton.me</a>
+          </p>
         </div>
 
         <form action="https://formspree.io/f/xpppkwje" method="POST">
@@ -835,6 +880,7 @@
               <label for="name">Your Name</label>
               <input id="name" name="name" type="text" placeholder="Your name" required>
             </div>
+
             <div class="form-group">
               <label for="email">Email Address</label>
               <input id="email" name="email" type="email" placeholder="you@example.com" required>
@@ -846,6 +892,7 @@
               <label for="business">Business Name</label>
               <input id="business" name="business" type="text" placeholder="Your business">
             </div>
+
             <div class="form-group">
               <label for="phone">Phone Number</label>
               <input id="phone" name="phone" type="tel" placeholder="Your phone number">
