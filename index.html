@@ -2,1107 +2,367 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="BrightPath Web Design creates professional, mobile-friendly websites for small businesses across the United States. Explore website packages and request a quote.">
-  <meta name="theme-color" content="#081426">
-  <title>BrightPath Web Design | Websites That Help Small Businesses Grow</title>
-
-  <style>
-    :root {
-      --bg: #081426;
-      --bg-light: #0d1d34;
-      --card: #11243e;
-      --blue: #3b82f6;
-      --blue-light: #60a5fa;
-      --white: #f8fafc;
-      --muted: #b7c5d8;
-      --border: rgba(255,255,255,.12);
-      --green: #34d399;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--white);
-      line-height: 1.65;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, input, select, textarea {
-      font: inherit;
-    }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
-
-    header {
-      background: rgba(8,20,38,.96);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(12px);
-    }
-
-    .nav {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .logo {
-      font-size: 1.45rem;
-      font-weight: 800;
-      letter-spacing: -.5px;
-    }
-
-    .logo span {
-      color: var(--blue-light);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: var(--muted);
-      font-size: .94rem;
-      transition: color .2s;
-    }
-
-    nav a:hover {
-      color: var(--white);
-    }
-
-    .button {
-      display: inline-block;
-      padding: 13px 23px;
-      border-radius: 8px;
-      background: var(--blue);
-      color: white;
-      font-weight: 700;
-      border: 1px solid var(--blue);
-      transition: .2s;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    .button:hover {
-      background: #2563eb;
-      transform: translateY(-2px);
-    }
-
-    .button-outline {
-      background: transparent;
-      border-color: rgba(255,255,255,.35);
-    }
-
-    .button-outline:hover {
-      background: rgba(255,255,255,.08);
-    }
-
-    .hero {
-      padding: 105px 0 95px;
-      background:
-        radial-gradient(ellipse at 80% 15%, rgba(59,130,246,.22), transparent 38%),
-        linear-gradient(145deg, #081426, #102846);
-    }
-
-    .hero-content {
-      max-width: 790px;
-    }
-
-    .eyebrow {
-      color: var(--blue-light);
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 2px;
-      font-size: .82rem;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(2.6rem, 6vw, 4.7rem);
-      line-height: 1.08;
-      letter-spacing: -2px;
-      margin-bottom: 25px;
-    }
-
-    h1 span {
-      color: var(--blue-light);
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.17rem;
-      max-width: 650px;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .trust-line {
-      margin-top: 35px;
-      color: #9fb1c8;
-      font-size: .92rem;
-    }
-
-    section {
-      padding: 82px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 48px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1.2;
-      margin-bottom: 15px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-    }
-
-    .section-label {
-      color: var(--blue-light);
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .two-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: 14px;
-    }
-
-    .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-    }
-
-    .card p, .card li {
-      color: var(--muted);
-    }
-
-    .card ul {
-      list-style: none;
-      margin-top: 18px;
-    }
-
-    .card li {
-      margin: 10px 0;
-    }
-
-    .card li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: 800;
-      margin-right: 10px;
-    }
-
-    .icon {
-      width: 45px;
-      height: 45px;
-      display: grid;
-      place-items: center;
-      background: rgba(59,130,246,.16);
-      color: var(--blue-light);
-      border-radius: 10px;
-      font-size: 1.35rem;
-      margin-bottom: 20px;
-    }
-
-    .alt-section {
-      background: var(--bg-light);
-    }
-
-    .about-copy {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .about-copy p {
-      color: var(--muted);
-      font-size: 1.08rem;
-      margin-bottom: 18px;
-    }
-
-    .pricing-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .pricing-card.featured {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 1px var(--blue);
-    }
-
-    .popular {
-      color: var(--blue-light);
-      font-size: .78rem;
-      text-transform: uppercase;
-      font-weight: 800;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    .price {
-      font-size: 2.55rem;
-      font-weight: 800;
-      margin: 10px 0 4px;
-    }
-
-    .price-note {
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    .pricing-card .button {
-      margin-top: auto;
-    }
-
-    .pricing-card ul {
-      margin-bottom: 25px;
-    }
-
-    .maintenance-note {
-      text-align: center;
-      color: var(--muted);
-      margin-top: 30px;
-      font-size: .95rem;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .step-number {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--blue-light);
-      margin-bottom: 12px;
-    }
-
-    .industries {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .industry {
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      border-radius: 30px;
-      padding: 10px 17px;
-    }
-
-    .cta {
-      background: linear-gradient(120deg, #123a70, #174f91);
-      text-align: center;
-      padding: 72px 25px;
-      border-radius: 18px;
-    }
-
-    .cta h2 {
-      font-size: clamp(2rem, 4vw, 2.7rem);
-      margin-bottom: 14px;
-    }
-
-    .cta p {
-      color: #d7e5f7;
-      max-width: 620px;
-      margin: 0 auto 25px;
-    }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 35px;
-      align-items: start;
-    }
-
-    .contact-info p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .contact-info a {
-      color: var(--blue-light);
-      overflow-wrap: anywhere;
-    }
-
-    .form-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 30px;
-    }
-
-    .form-card h3 {
-      font-size: 1.45rem;
-      margin-bottom: 8px;
-    }
-
-    .form-intro {
-      color: var(--muted);
-      margin-bottom: 23px;
-    }
-
-    .form-group {
-      margin-bottom: 17px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: 700;
-      margin-bottom: 7px;
-      font-size: .93rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 13px 14px;
-      background: #09182b;
-      color: white;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 7px;
-      outline: none;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--blue-light);
-      box-shadow: 0 0 0 2px rgba(96,165,250,.15);
-    }
-
-    .form-group textarea {
-      min-height: 135px;
-      resize: vertical;
-    }
-
-    .form-group select option {
-      background: #09182b;
-    }
-
-    .form-small {
-      color: #aabbd0;
-      font-size: .84rem;
-      margin-top: 13px;
-    }
-
-    .form-card .button {
-      width: 100%;
-      margin-top: 5px;
-    }
-
-    .faq-list {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    details {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px 23px;
-      margin-bottom: 13px;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    details p {
-      color: var(--muted);
-      margin-top: 13px;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 35px 0;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
-    @media (max-width: 850px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .steps {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .contact-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .nav {
-        padding: 15px 0;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      nav {
-        gap: 13px 18px;
-      }
-
-      .grid, .two-grid, .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 75px 0;
-      }
-
-      section {
-        padding: 62px 0;
-      }
-
-      .hero-buttons .button {
-        width: 100%;
-      }
-
-      .card, .form-card {
-        padding: 23px;
-      }
-
-      h1 {
-        letter-spacing: -1px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BrightPath Web Design creates professional, affordable websites for small businesses throughout the United States.">
+<title>BrightPath Web Design | Professional Websites for Small Businesses</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;color:#17263b;line-height:1.6}
+.container{width:min(1100px,90%);margin:auto}
+
+header{background:#081426;padding:18px 0}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{color:white;font-size:1.55rem;font-weight:bold;text-decoration:none}
+.logo span{color:#48c7f5}
+nav{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+nav a{color:white;text-decoration:none;font-size:.88rem}
+nav a:hover{color:#48c7f5}
+nav .demo-link{color:#48c7f5;font-weight:bold}
+
+.button{display:inline-block;background:#2878f0;color:white;padding:14px 24px;border-radius:7px;text-decoration:none;font-weight:bold;border:0;cursor:pointer;font-size:1rem}
+.button:hover{background:#1764d4}
+.outline{display:inline-block;border:1px solid white;color:white;padding:13px 22px;border-radius:7px;text-decoration:none}
+.eyebrow{color:#48c7f5;font-size:.8rem;font-weight:bold;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+
+.hero{background:linear-gradient(135deg,#081426,#17365e);color:white;padding:105px 0}
+.hero-content{max-width:790px}
+h1{font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.1;margin-bottom:22px}
+.hero p{color:#d3deed;font-size:1.15rem;margin-bottom:28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:13px}
+
+section{padding:75px 0}
+.heading{text-align:center;max-width:760px;margin:0 auto 42px}
+.heading .eyebrow{color:#2878f0}
+h2{font-size:clamp(2rem,4vw,2.8rem);color:#081426;line-height:1.2;margin-bottom:14px}
+.heading p{color:#64748b}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:white;border:1px solid #e1e8f1;border-radius:12px;padding:27px;box-shadow:0 8px 25px rgba(12,35,65,.05)}
+.card h3{color:#081426;margin-bottom:10px}
+.card p{color:#64748b}
+.icon{font-size:1.7rem;margin-bottom:12px}
+
+.dark{background:#081426;color:white}
+.dark h2{color:white}
+.dark .heading p{color:#c2d0e1}
+.dark .card{background:#122743;border-color:#29415f}
+.dark .card h3{color:white}
+.dark .card p{color:#c2d0e1}
+
+.demo-section{background:#edf5ff}
+.demo-card{background:white;border:1px solid #d8e7fa;border-radius:14px;padding:34px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;box-shadow:0 10px 30px rgba(12,35,65,.07)}
+.demo-card h3{font-size:1.7rem;color:#081426;margin-bottom:12px}
+.demo-card p{color:#64748b;margin-bottom:20px}
+.demo-label{display:inline-block;background:#e4f2ff;color:#1764d4;padding:6px 12px;border-radius:30px;font-size:.78rem;font-weight:bold;margin-bottom:14px}
+.demo-preview{background:linear-gradient(135deg,#081426,#17365e);color:white;padding:35px 25px;border-radius:12px;text-align:center}
+.demo-preview .preview-icon{font-size:3rem;margin-bottom:12px}
+.demo-preview h4{font-size:1.4rem;margin-bottom:8px}
+.demo-preview p{color:#d3deed;font-size:.9rem;margin:0}
+
+.pricing{background:#f3f7fc}
+.price-card{background:white;border:1px solid #e1e8f1;border-radius:12px;padding:27px;display:flex;flex-direction:column}
+.price-card.featured{border:2px solid #2878f0}
+.price{font-size:2.3rem;font-weight:bold;color:#081426;margin:10px 0}
+.price-card>p{color:#64748b;margin-bottom:16px}
+.price-card ul{list-style:none;flex:1;margin-bottom:22px}
+.price-card li{padding:8px 0;border-bottom:1px solid #edf1f6;color:#52647b;font-size:.93rem}
+.price-card li:before{content:"✓";color:#2878f0;font-weight:bold;margin-right:9px}
+.price-card .button{text-align:center}
+
+.maintenance{background:#fff}
+.maintenance-note{max-width:850px;margin:28px auto 0;text-align:center;color:#64748b;font-size:.9rem}
+.process-number{background:#eaf3ff;color:#2878f0;border-radius:50%;width:42px;height:42px;display:grid;place-items:center;font-weight:bold;margin-bottom:15px}
+
+.faq{background:#f3f7fc}
+.faq-list{max-width:820px;margin:auto;display:grid;gap:14px}
+.faq-item{background:white;padding:22px;border:1px solid #e1e8f1;border-radius:10px}
+.faq-item h3{color:#081426;margin-bottom:8px}
+.faq-item p{color:#64748b}
+
+.contact{background:linear-gradient(135deg,#0b1b32,#153d70);color:white}
+.contact h2{color:white}
+.contact-intro{text-align:center}
+.contact-intro p{color:#d1dceb;max-width:700px;margin:0 auto 25px}
+.quote-form{max-width:700px;margin:35px auto 0;padding:30px;background:white;color:#17263b;border-radius:12px;text-align:left;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.quote-form label{display:block;font-weight:bold;margin:16px 0 6px}
+.quote-form input,.quote-form select,.quote-form textarea{width:100%;padding:13px;border:1px solid #cbd5e1;border-radius:6px;font:inherit;background:#fff;color:#17263b}
+.quote-form textarea{min-height:130px;resize:vertical}
+.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{outline:2px solid #2878f0;border-color:#2878f0}
+.quote-form .button{width:100%;margin-top:22px}
+.form-required{color:#64748b;font-size:.85rem;margin-top:10px}
+.email{display:block;color:#48c7f5;font-weight:bold;margin-top:22px;text-decoration:none;text-align:center}
+
+footer{background:#06101e;color:#9eafc5;text-align:center;padding:28px 0;font-size:.88rem}
+footer a{color:#48c7f5;text-decoration:none}
+
+@media(max-width:850px){
+.nav{flex-direction:column;align-items:flex-start}
+.grid{grid-template-columns:1fr}
+.demo-card{grid-template-columns:1fr}
+.hero{padding:75px 0}
+section{padding:58px 0}
+}
+@media(max-width:520px){
+nav{gap:12px}
+nav a{font-size:.82rem}
+.hero-actions .button,.hero-actions .outline{width:100%;text-align:center}
+.quote-form{padding:20px}
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="container nav">
-      <a href="#home" class="logo">BrightPath <span>Web Design</span></a>
-
-      <nav aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#maintenance">Maintenance</a>
-        <a href="#process">Our Process</a>
-        <a href="#contact" class="button">Get a Quote</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <div class="eyebrow">Professional websites for small businesses</div>
-
-          <h1>Turn More Website Visitors Into <span>Paying Customers.</span></h1>
-
-          <p>
-            Your website is often the first impression people have of your business.
-            BrightPath Web Design creates professional, mobile-friendly websites
-            that help small businesses build trust, explain their services, and
-            make it easier for customers to get in touch.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#contact" class="button">Request a Free Quote</a>
-            <a href="#services" class="button button-outline">Explore Our Services</a>
-          </div>
-
-          <div class="trust-line">
-            Serving small businesses remotely across the United States.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">What we do</div>
-          <h2>Websites Built Around Your Business</h2>
-          <p>
-            A good website should make it easy for customers to understand what
-            you offer, trust your business, and take the next step.
-          </p>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <div class="icon">✦</div>
-            <h3>Professional Website Design</h3>
-            <p>
-              Clean, modern layouts designed to give your business a polished
-              and professional online presence.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">▣</div>
-            <h3>Mobile-Friendly Design</h3>
-            <p>
-              Responsive pages that adapt to phones, tablets, and desktop
-              screens so customers can browse comfortably.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">✉</div>
-            <h3>Contact and Quote Forms</h3>
-            <p>
-              Convenient ways for visitors to ask questions, request estimates,
-              and reach your business.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">⌕</div>
-            <h3>Search-Friendly Structure</h3>
-            <p>
-              Organized page content, descriptive headings, and basic on-page
-              SEO foundations to help search engines understand your site.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">▤</div>
-            <h3>Service and Portfolio Pages</h3>
-            <p>
-              Present your services, work examples, business information,
-              and important details in a clear format.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">⚙</div>
-            <h3>Website Updates</h3>
-            <p>
-              Optional ongoing maintenance plans for businesses that want
-              help keeping their website content current.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="alt-section" id="about">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">About BrightPath</div>
-          <h2>A Better Online First Impression Starts Here</h2>
-        </div>
-
-        <div class="about-copy">
-          <p>
-            BrightPath Web Design helps small businesses create a professional
-            online presence without making the website process unnecessarily
-            complicated.
-          </p>
-          <p>
-            We focus on clear messaging, attractive layouts, mobile usability,
-            and practical features that make it easier for potential customers
-            to learn about your business and contact you.
-          </p>
-          <p>
-            Whether you're starting from scratch or ready to improve an existing
-            website, we'll work with you to understand your goals and recommend
-            a package that fits your needs.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Website packages</div>
-          <h2>Simple, Upfront Website Pricing</h2>
-          <p>
-            Choose a starting package based on the size and needs of your
-            business. Final project scope and deliverables are confirmed
-            before work begins.
-          </p>
-        </div>
-
-        <div class="grid">
-          <div class="card pricing-card">
-            <h3>Starter</h3>
-            <div class="price">$499</div>
-            <div class="price-note">One-time starting price</div>
-
-            <ul>
-              <li>Professional small-business website</li>
-              <li>Mobile-friendly layout</li>
-              <li>Core business information</li>
-              <li>Services and contact section</li>
-              <li>Basic on-page SEO structure</li>
-              <li>Contact information and links</li>
-            </ul>
-
-            <a href="#contact" class="button button-outline">Ask About Starter</a>
-          </div>
-
-          <div class="card pricing-card featured">
-            <div class="popular">Popular option</div>
-            <h3>Business</h3>
-            <div class="price">$899</div>
-            <div class="price-note">One-time starting price</div>
-
-            <ul>
-              <li>Everything in Starter</li>
-              <li>Expanded multi-section website</li>
-              <li>Additional service information</li>
-              <li>Custom quote or contact form</li>
-              <li>More room for photos and content</li>
-              <li>Enhanced calls to action</li>
-            </ul>
-
-            <a href="#contact" class="button">Ask About Business</a>
-          </div>
-
-          <div class="card pricing-card">
-            <h3>Premium</h3>
-            <div class="price">$1,499</div>
-            <div class="price-note">One-time starting price</div>
-
-            <ul>
-              <li>Everything in Business</li>
-              <li>Expanded custom page structure</li>
-              <li>Additional content sections</li>
-              <li>More advanced design customization</li>
-              <li>Expanded lead-generation features</li>
-              <li>Additional project planning</li>
-            </ul>
-
-            <a href="#contact" class="button button-outline">Ask About Premium</a>
-          </div>
-        </div>
-
-        <p class="maintenance-note">
-          Package prices are starting prices. Final pricing depends on the
-          agreed project scope, content, and features. Hosting, domain
-          registration, paid third-party services, and other outside costs
-          are discussed separately when applicable.
-        </p>
-      </div>
-    </section>
-
-    <section class="alt-section" id="maintenance">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Ongoing support</div>
-          <h2>Website Maintenance Plans</h2>
-          <p>
-            Keep your website content fresh with optional monthly support.
-            Choose a level that matches the amount of help you expect to need.
-          </p>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Basic Maintenance</h3>
-            <div class="price">$49<span style="font-size:1rem;font-weight:400">/mo</span></div>
-            <ul>
-              <li>Small website content updates</li>
-              <li>Basic text and image changes</li>
-              <li>Routine website review</li>
-              <li>Requests handled within the plan's stated allowance</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Standard Maintenance</h3>
-            <div class="price">$99<span style="font-size:1rem;font-weight:400">/mo</span></div>
-            <ul>
-              <li>More room for routine updates</li>
-              <li>Text, image, and section adjustments</li>
-              <li>Ongoing content assistance</li>
-              <li>Requests handled within the plan's stated allowance</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Premium Maintenance</h3>
-            <div class="price">$149<span style="font-size:1rem;font-weight:400">/mo</span></div>
-            <ul>
-              <li>Highest level of included update support</li>
-              <li>More frequent content assistance</li>
-              <li>Additional routine website changes</li>
-              <li>Requests handled within the plan's stated allowance</li>
-            </ul>
-          </div>
-        </div>
-
-        <p class="maintenance-note">
-          Each maintenance plan has defined time allowances and scope.
-          Unused time does not automatically roll over. Larger redesigns,
-          new features, emergency work, third-party fees, and work outside
-          the included allowance may require a separate quote. Maintenance
-          is not 24/7 monitoring or guaranteed emergency support.
-          Exact plan terms are provided before enrollment.
-        </p>
-      </div>
-    </section>
-
-    <section id="process">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">How it works</div>
-          <h2>A Straightforward Website Process</h2>
-          <p>
-            We keep the process clear so you know what to expect at every stage.
-          </p>
-        </div>
-
-        <div class="steps">
-          <div class="card">
-            <div class="step-number">01</div>
-            <h3>Tell Us About Your Business</h3>
-            <p>
-              Share your services, goals, preferred style, and the features
-              you need.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="step-number">02</div>
-            <h3>Choose Your Package</h3>
-            <p>
-              We'll discuss the project scope, pricing, timeline, and what
-              materials are needed.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="step-number">03</div>
-            <h3>Design and Review</h3>
-            <p>
-              We'll build the website and give you an opportunity to review
-              the agreed work.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="step-number">04</div>
-            <h3>Launch</h3>
-            <p>
-              After approval and completion of the agreed requirements,
-              your website can be published.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="alt-section" id="industries">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Who we help</div>
-          <h2>Websites for Small Businesses</h2>
-          <p>
-            We work remotely with businesses across the United States.
-            Here are some of the industries we can help.
-          </p>
-        </div>
-
-        <div class="industries">
-          <span class="industry">Auto Detailing</span>
-          <span class="industry">Home Services</span>
-          <span class="industry">Landscaping</span>
-          <span class="industry">Cleaning Services</span>
-          <span class="industry">Contractors</span>
-          <span class="industry">Local Shops</span>
-          <span class="industry">Professional Services</span>
-          <span class="industry">Independent Businesses</span>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="cta">
-          <h2>Ready to Improve Your Online Presence?</h2>
-          <p>
-            Tell us about your business and what you'd like your website
-            to accomplish. We'll review your request and discuss the next step.
-          </p>
-          <a href="#contact" class="button">Start Your Website Project</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="alt-section" id="faq">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Questions and answers</div>
-          <h2>Frequently Asked Questions</h2>
-        </div>
-
-        <div class="faq-list">
-          <details>
-            <summary>Do you work with businesses outside your local area?</summary>
-            <p>
-              Yes. BrightPath Web Design works remotely with small businesses
-              across the United States.
-            </p>
-          </details>
-
-          <details>
-            <summary>How much does a website cost?</summary>
-            <p>
-              Our listed website packages start at $499, $899, and $1,499.
-              The final price depends on the features, content, and scope
-              agreed upon for your project.
-            </p>
-          </details>
-
-          <details>
-            <summary>How long does a website take to build?</summary>
-            <p>
-              Timing depends on the size of the project, the features requested,
-              and how quickly the necessary content and feedback are provided.
-              We'll discuss an estimated timeline before work begins.
-            </p>
-          </details>
-
-          <details>
-            <summary>Can you update my website after it launches?</summary>
-            <p>
-              Yes. Optional monthly maintenance plans are available for
-              routine website updates within the agreed plan limits.
-            </p>
-          </details>
-
-          <details>
-            <summary>Do I need to provide photos and written content?</summary>
-            <p>
-              We'll discuss what you already have and what is needed for
-              your website. Any stock imagery, supplied materials, or
-              additional content requirements will be discussed as part
-              of the project.
-            </p>
-          </details>
-
-          <details>
-            <summary>Does a website guarantee more customers?</summary>
-            <p>
-              No website can guarantee sales, search rankings, or a specific
-              number of leads. A well-organized website can help present
-              your business professionally and make it easier for potential
-              customers to contact you.
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Let's talk</div>
-          <h2>Request Your Website Quote</h2>
-          <p>
-            Tell us a little about your business and the website you're
-            looking for. We'll follow up using the contact information
-            you provide.
-          </p>
-        </div>
-
-        <div class="contact-layout">
-          <div class="contact-info">
-            <h3>Let's Build Something for Your Business.</h3>
-            <p>
-              Whether you need a brand-new website or want to improve
-              an existing one, BrightPath is ready to hear about your goals.
-            </p>
-
-            <p><strong>Email:</strong><br>
-              <a href="mailto:brightpathwebdesign@proton.me">
-                brightpathwebdesign@proton.me
-              </a>
-            </p>
-
-            <p>
-              <strong>Service area:</strong><br>
-              Remote website design for small businesses throughout the
-              United States.
-            </p>
-
-            <p>
-              No obligation to purchase. Submitting a request lets us
-              learn about your project and discuss possible next steps.
-            </p>
-          </div>
-
-          <div class="form-card">
-            <h3>Tell Us About Your Project</h3>
-            <p class="form-intro">
-              Complete the form below to request a website quote.
-            </p>
-
-            <form action="https://formspree.io/f/xpppkwje" method="POST">
-              <input type="hidden" name="_subject" value="New BrightPath Website Quote Request">
-
-              <div class="form-group">
-                <label for="name">Your Name *</label>
-                <input type="text" id="name" name="name" autocomplete="name" required>
-              </div>
-
-              <div class="form-group">
-                <label for="business">Business Name</label>
-                <input type="text" id="business" name="business_name" autocomplete="organization">
-              </div>
-
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" autocomplete="email" required>
-              </div>
-
-              <div class="form-group">
-                <label for="phone">Phone Number (Optional)</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel">
-              </div>
-
-              <div class="form-group">
-                <label for="package">Which package interests you?</label>
-                <select id="package" name="package">
-                  <option value="">Select an option</option>
-                  <option value="Starter - $499">Starter - $499</option>
-                  <option value="Business - $899">Business - $899</option>
-                  <option value="Premium - $1499">Premium - $1,499</option>
-                  <option value="Not sure yet">Not sure yet</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="website">Do you currently have a website?</label>
-                <select id="website" name="current_website">
-                  <option value="">Select an option</option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                  <option value="I have a website that needs improvement">I have a website that needs improvement</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="details">Tell Us About Your Project *</label>
-                <textarea id="details" name="project_details" placeholder="What does your business do? What would you like your website to include?" required></textarea>
-              </div>
-
-              <button type="submit" class="button">Send My Quote Request</button>
-
-              <p class="form-small">
-                Your information will be sent to BrightPath Web Design
-                so we can respond to your inquiry. Please do not include
-                passwords or sensitive personal information.
-              </p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-content">
-      <div>
-        <strong>BrightPath Web Design</strong><br>
-        <span>Professional websites for small businesses.</span>
-      </div>
-
-      <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-        <a href="mailto:brightpathwebdesign@proton.me">Email Us</a>
-      </div>
-
-      <div>
-        &copy; <span id="year"></span> BrightPath Web Design. All rights reserved.
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<header>
+<div class="container nav">
+<a class="logo" href="index.html">BrightPath<span>.</span></a>
+<nav>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#maintenance">Maintenance</a>
+<a href="#process">Process</a>
+<a class="demo-link" href="auto-detailing.html">Auto Detailing Demo</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="container hero-content">
+<div class="eyebrow">Professional Websites for Small Businesses</div>
+<h1>Turn More Website Visitors Into Paying Customers.</h1>
+<p>BrightPath Web Design helps small businesses build a professional online presence with affordable, mobile-friendly websites designed to showcase your services and make it easier for customers to reach you.</p>
+<div class="hero-actions">
+<a class="button" href="#contact">Get a Free Quote</a>
+<a class="outline" href="#services">Explore Our Services</a>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<div class="heading">
+<div class="eyebrow">What We Do</div>
+<h2>Websites Built to Help Your Business Grow</h2>
+<p>Your website should make a strong first impression, explain what you offer, and help potential customers take the next step.</p>
+</div>
+<div class="grid">
+<article class="card"><div class="icon">💻</div><h3>Professional Website Design</h3><p>Clean, modern website layouts that give your business a professional online presence.</p></article>
+<article class="card"><div class="icon">📱</div><h3>Mobile-Friendly Websites</h3><p>Responsive designs that are easy to use on phones, tablets, and desktop computers.</p></article>
+<article class="card"><div class="icon">✉</div><h3>Contact and Quote Forms</h3><p>Give potential customers a simple way to ask questions and request information.</p></article>
+<article class="card"><div class="icon">🛠</div><h3>Website Updates</h3><p>Keep your website information, services, and content current as your business changes.</p></article>
+<article class="card"><div class="icon">🔎</div><h3>Basic SEO Setup</h3><p>Organize page titles, descriptions, and content to establish a useful search-friendly foundation.</p></article>
+<article class="card"><div class="icon">🤝</div><h3>Small Business Focus</h3><p>Practical website solutions for independent businesses and growing local companies.</p></article>
+</div>
+</div>
+</section>
+
+<section class="demo-section" id="demo">
+<div class="container">
+<div class="heading">
+<div class="eyebrow">See a Website Example</div>
+<h2>Explore Our Auto Detailing Website Demo</h2>
+<p>Want to see an example of what a BrightPath website can look like? Visit our sample auto detailing website.</p>
+</div>
+<div class="demo-card">
+<div>
+<span class="demo-label">INTERACTIVE WEBSITE DEMO</span>
+<h3>Auto Detailing Website Example</h3>
+<p>Explore a sample website built for an auto detailing business. It demonstrates service sections, a photo gallery, pricing packages, and a quote request form.</p>
+<a class="button" href="auto-detailing.html">View Auto Detailing Demo →</a>
+</div>
+<div class="demo-preview">
+<div class="preview-icon">🚘</div>
+<h4>Get Your Detailing Business Noticed Online.</h4>
+<p>A sample website concept by BrightPath Web Design.</p>
+</div>
+</div>
+<p style="text-align:center;color:#64748b;font-size:.85rem;margin-top:18px">This is a demonstration website, not an actual auto detailing business. Photos are illustrative stock images.</p>
+</div>
+</section>
+
+<section class="dark">
+<div class="container">
+<div class="heading">
+<div class="eyebrow">Why BrightPath</div>
+<h2>A Clear, Straightforward Approach</h2>
+<p>We focus on useful websites, clear communication, and project expectations you can understand.</p>
+</div>
+<div class="grid">
+<article class="card"><div class="icon">💡</div><h3>Practical Solutions</h3><p>Websites focused on the information your customers need to make a decision.</p></article>
+<article class="card"><div class="icon">📋</div><h3>Clear Project Scope</h3><p>Know what is included, what it costs, and what to expect before work begins.</p></article>
+<article class="card"><div class="icon">🌎</div><h3>Remote Service</h3><p>BrightPath works remotely with small businesses throughout the United States.</p></article>
+</div>
+</div>
+</section>
+
+<section class="pricing" id="pricing">
+<div class="container">
+<div class="heading">
+<div class="eyebrow">Website Packages</div>
+<h2>Affordable Website Design Packages</h2>
+<p>Choose a starting package. Final features, project scope, and pricing are confirmed in a written quote before work begins.</p>
+</div>
+<div class="grid">
+
+<article class="price-card">
+<h3>Starter</h3><div class="price">$499</div>
+<p>A clean online presence for a small business getting started.</p>
+<ul>
+<li>One-page website</li>
+<li>Mobile-friendly layout</li>
+<li>Business introduction</li>
+<li>Services section</li>
+<li>Contact information</li>
+<li>One revision round</li>
+</ul>
+<a class="button" href="#contact">Choose Starter</a>
+</article>
+
+<article class="price-card featured">
+<h3>Business</h3><div class="price">$899</div>
+<p>More space to showcase your business and services.</p>
+<ul>
+<li>Up to five pages</li>
+<li>Mobile-friendly layout</li>
+<li>Services and about sections</li>
+<li>Photo gallery section</li>
+<li>Contact or quote form</li>
+<li>Two revision rounds</li>
+</ul>
+<a class="button" href="#contact">Choose Business</a>
+</article>
+
+<article class="price-card">
+<h3>Premium</h3><div class="price">$1,499</div>
+<p>A more complete website for a growing business.</p>
+<ul>
+<li>Up to eight pages</li>
+<li>Custom page layouts</li>
+<li>Expanded service sections</li>
+<li>Expanded photo gallery</li>
+<li>Basic on-page SEO setup</li>
+<li>Three revision rounds</li>
+</ul>
+<a class="button" href="#contact">Choose Premium</a>
+</article>
+
+</div>
+</div>
+</section>
+
+<section class="maintenance" id="maintenance">
+<div class="container">
+<div class="heading">
+<div class="eyebrow">Ongoing Website Support</div>
+<h2>Optional Monthly Maintenance</h2>
+<p>Need help keeping your website updated after launch? Optional maintenance plans are available.</p>
+</div>
+<div class="grid">
+<article class="card"><h3>Basic Maintenance</h3><div class="price">$49<span style="font-size:1rem">/month</span></div><p>For occasional small website updates and basic content changes.</p></article>
+<article class="card"><h3>Business Maintenance</h3><div class="price">$99<span style="font-size:1rem">/month</span></div><p>For businesses that need more regular website content and information updates.</p></article>
+<article class="card"><h3>Premium Maintenance</h3><div class="price">$149<span style="font-size:1rem">/month</span></div><p>For businesses that want a higher level of ongoing website update support.</p></article>
+</div>
+<p class="maintenance-note">Maintenance is optional. Exact plan terms, included update time, request limits, response expectations, and exclusions will be provided in writing before enrollment. These plans do not include 24/7 monitoring or unlimited work. Unused time does not automatically roll over.</p>
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+<div class="heading">
+<div class="eyebrow">How It Works</div>
+<h2>A Simple Website Design Process</h2>
+<p>From the first conversation to launch, we aim to keep each step clear.</p>
+</div>
+<div class="grid">
+<article class="card"><div class="process-number">1</div><h3>Tell Us About Your Business</h3><p>Share your business details, goals, services, and the type of website you're looking for.</p></article>
+<article class="card"><div class="process-number">2</div><h3>Review Your Quote</h3><p>We'll discuss your needs and provide a written quote with the agreed features, price, and timeline.</p></article>
+<article class="card"><div class="process-number">3</div><h3>Build Your Website</h3><p>Once the project scope and terms are approved, we'll get started on your website.</p></article>
+</div>
+</div>
+</section>
+
+<section class="faq">
+<div class="container">
+<div class="heading">
+<div class="eyebrow">Frequently Asked Questions</div>
+<h2>Questions About Working With BrightPath</h2>
+</div>
+<div class="faq-list">
+<article class="faq-item"><h3>Who do you build websites for?</h3><p>BrightPath focuses on small businesses and independent service providers. We can discuss your business and determine whether a website project is a good fit.</p></article>
+<article class="faq-item"><h3>Do you work with businesses outside your area?</h3><p>Yes. BrightPath works remotely with small businesses throughout the United States.</p></article>
+<article class="faq-item"><h3>How much does a website cost?</h3><p>Website packages start at $499. Final pricing depends on the agreed project scope, features, and content.</p></article>
+<article class="faq-item"><h3>How long does a website take?</h3><p>Timing depends on the size of the project, content readiness, revisions, and agreed schedule. We'll discuss an expected timeline before work begins.</p></article>
+<article class="faq-item"><h3>Is monthly maintenance required?</h3><p>No. Monthly maintenance is optional. Any ongoing services and their terms will be discussed separately.</p></article>
+<article class="faq-item"><h3>Can I see an example?</h3><p>Yes! Visit our <a href="auto-detailing.html">auto detailing website demo</a> to explore a sample website design.</p></article>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container">
+<div class="contact-intro">
+<div class="eyebrow">Let's Talk About Your Project</div>
+<h2>Ready to Build Your Business Website?</h2>
+<p>Tell us a little about your business and what you're looking for. We'll review your request and follow up to discuss your project and a written quote.</p>
+</div>
+
+<form class="quote-form" action="https://formspree.io/f/xpppkwje" method="POST">
+<input type="hidden" name="_subject" value="New BrightPath Website Quote Request">
+
+<label for="name">Your Name *</label>
+<input id="name" type="text" name="name" placeholder="Your name" required>
+
+<label for="business">Business Name</label>
+<input id="business" type="text" name="business_name" placeholder="Your business name">
+
+<label for="email">Email Address *</label>
+<input id="email" type="email" name="email" placeholder="you@example.com" required>
+
+<label for="phone">Phone Number (Optional)</label>
+<input id="phone" type="tel" name="phone" placeholder="Your phone number">
+
+<label for="package">Which Website Package Interests You?</label>
+<select id="package" name="package">
+<option value="">Select a package</option>
+<option value="Starter - $499">Starter - $499</option>
+<option value="Business - $899">Business - $899</option>
+<option value="Premium - $1499">Premium - $1,499</option>
+<option value="Not sure yet">Not sure yet</option>
+</select>
+
+<label for="website">Current Website (If You Have One)</label>
+<input id="website" type="text" name="current_website" placeholder="https://">
+
+<label for="details">Tell Us About Your Project *</label>
+<textarea id="details" name="project_details" placeholder="What does your business do? What would you like your website to accomplish?" required></textarea>
+
+<button class="button" type="submit">Send Website Quote Request</button>
+<p class="form-required">* Required fields. Submitting this form sends your request to BrightPath Web Design.</p>
+</form>
+
+<a class="email" href="mailto:brightpathwebdesign@proton.me">brightpathwebdesign@proton.me</a>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+<p>© <span id="year">2026</span> BrightPath Web Design. All rights reserved.</p>
+<p style="margin-top:10px"><a href="auto-detailing.html">Explore the Auto Detailing Demo</a></p>
+<p style="margin-top:12px;font-size:.8rem">Website package prices are starting prices. Final project scope, content, revisions, delivery schedule, payment terms, and third-party services are confirmed in a written agreement before work begins.</p>
+</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
