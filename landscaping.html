@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Landscaping website design demo by BrightPath Web Design.">
-  <title>Evergreen Outdoor Living | Landscaping Demo</title>
+  <meta name="description" content="Evergreen Outdoor Living creates beautiful, functional outdoor spaces with professional landscaping, lawn care, and garden design.">
+  <title>Evergreen Outdoor Living | Landscaping & Lawn Care</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,20 +13,22 @@
 
   <style>
     :root {
-      --navy: #101b20;
-      --navy-light: #19282b;
-      --green: #668b60;
-      --green-light: #91ad78;
-      --gold: #c6a66b;
-      --cream: #f4f2eb;
+      --green: #244b38;
+      --green-dark: #173426;
+      --green-light: #e8efe8;
+      --gold: #c49a55;
+      --cream: #f7f5ef;
       --white: #ffffff;
-      --muted: #b8c2bb;
+      --text: #26352d;
+      --muted: #6c786f;
+      --border: #e1e5dd;
+      --shadow: 0 12px 35px rgba(25, 53, 38, 0.09);
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -34,10 +36,10 @@
     }
 
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--navy);
-      color: var(--white);
-      line-height: 1.7;
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
     }
 
     a {
@@ -45,243 +47,367 @@
       text-decoration: none;
     }
 
-    .demo-notice {
-      background: #d5e3d0;
-      color: #203324;
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin: 0 auto 45px;
       text-align: center;
-      padding: 12px 18px;
-      font-size: 12px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 1.1px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      line-height: 1.2;
+    }
+
+    h2 {
+      color: var(--green-dark);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 15px;
+    }
+
+    .section-heading p,
+    .muted {
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 23px;
+      border-radius: 4px;
+      background: var(--gold);
+      color: #1d2d22;
+      font-weight: 700;
+      border: 1px solid var(--gold);
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #d4ae70;
+      border-color: #d4ae70;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(255,255,255,0.75);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--green-dark);
+      border-color: white;
+    }
+
+    /* Navigation */
+    .topbar {
+      background: var(--green-dark);
+      color: #e8eee9;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 0.82rem;
     }
 
     header {
-      background: rgba(16, 27, 32, .97);
-      border-bottom: 1px solid rgba(255,255,255,.09);
       position: sticky;
       top: 0;
       z-index: 100;
+      background: white;
+      box-shadow: 0 3px 18px rgba(0,0,0,0.05);
     }
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 24px;
+    .navbar {
+      min-height: 78px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 25px;
     }
 
     .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 25px;
+      font-family: "Playfair Display", Georgia, serif;
+      color: var(--green-dark);
+      font-size: 1.45rem;
       font-weight: 800;
-      color: var(--white);
-      line-height: 1.2;
+      line-height: 1.1;
     }
 
     .logo span {
-      color: var(--green-light);
+      display: block;
+      color: var(--gold);
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 5px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 25px;
-      font-size: 13px;
-      color: #e0e6e0;
+      list-style: none;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     .nav-links a:hover {
-      color: var(--green-light);
+      color: var(--gold);
     }
 
-    .nav-cta {
-      background: var(--green);
-      padding: 11px 18px;
-      border-radius: 4px;
-      font-weight: 700;
-      color: white;
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      font-size: 1.8rem;
+      color: var(--green-dark);
+      cursor: pointer;
     }
 
+    /* Hero */
     .hero {
-      min-height: 650px;
+      min-height: 610px;
       display: flex;
       align-items: center;
+      color: white;
       background:
-        linear-gradient(90deg, rgba(10,19,21,.91), rgba(10,19,21,.63), rgba(10,19,21,.25)),
-        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85') center/cover;
+        linear-gradient(90deg, rgba(15, 39, 26, 0.88), rgba(15, 39, 26, 0.48)),
+        url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=2000&q=85") center/cover;
     }
 
     .hero-content {
-      max-width: 1200px;
-      width: 100%;
-      margin: auto;
-      padding: 100px 24px;
+      max-width: 680px;
+      padding: 95px 0;
     }
 
-    .eyebrow {
-      color: var(--green-light);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-      font-weight: 700;
+    .hero .eyebrow {
+      color: #e2bd7d;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.7rem);
       margin-bottom: 20px;
     }
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: clamp(42px, 6vw, 72px);
-      max-width: 750px;
-      margin-bottom: 24px;
-    }
-
     .hero p {
-      color: #e0e5df;
-      max-width: 570px;
-      font-size: 17px;
-      margin-bottom: 34px;
+      max-width: 560px;
+      font-size: 1.08rem;
+      color: #edf1ec;
+      margin-bottom: 30px;
     }
 
-    .btn {
-      display: inline-block;
-      background: var(--green);
-      color: white;
-      padding: 15px 25px;
-      border-radius: 4px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .5px;
-      transition: .2s;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
     }
 
-    .btn:hover {
-      background: #789d70;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,.55);
-      margin-left: 10px;
-    }
-
-    .section {
-      padding: 95px 24px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-heading {
-      max-width: 680px;
-      margin-bottom: 45px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(34px, 4vw, 48px);
-      margin-bottom: 16px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-    }
-
-    .services {
+    /* Trust strip */
+    .trust-strip {
       background: var(--cream);
-      color: var(--navy);
+      padding: 27px 0;
     }
 
-    .services .section-heading p {
-      color: #64716a;
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      text-align: center;
     }
 
-    .service-grid {
+    .trust-item strong {
+      display: block;
+      color: var(--green);
+      font-size: 1rem;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* Services */
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
     .service-card {
-      padding: 30px;
+      padding: 29px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
       background: white;
-      border: 1px solid #e3e7df;
-      border-radius: 6px;
-      transition: .2s;
+      transition: 0.25s ease;
     }
 
     .service-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(0,0,0,.08);
+      box-shadow: var(--shadow);
+      border-color: #c7d4c8;
     }
 
     .service-icon {
-      font-size: 29px;
-      margin-bottom: 16px;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 1.35rem;
+      margin-bottom: 19px;
     }
 
     .service-card h3 {
-      font-size: 22px;
+      font-size: 1.3rem;
+      color: var(--green-dark);
       margin-bottom: 10px;
     }
 
     .service-card p {
-      font-size: 14px;
-      color: #69766e;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    /* About */
+    .about {
+      background: var(--cream);
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 65px;
       align-items: center;
+      gap: 60px;
     }
 
     .about-image {
-      width: 100%;
-      height: 460px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-
-    .about-copy h2 {
-      font-size: clamp(34px, 4vw, 48px);
-      margin-bottom: 20px;
+      height: 470px;
+      border-radius: 7px;
+      box-shadow: var(--shadow);
     }
 
     .about-copy p {
       color: var(--muted);
-      margin-bottom: 18px;
+      margin: 17px 0;
     }
 
     .check-list {
       list-style: none;
-      margin: 25px 0 30px;
+      margin: 22px 0 28px;
     }
 
     .check-list li {
-      margin: 12px 0;
-      color: #e4e9e2;
+      margin: 11px 0;
+      font-weight: 600;
+      color: var(--green);
     }
 
     .check-list li::before {
       content: "✓";
-      color: var(--green-light);
-      font-weight: bold;
-      margin-right: 12px;
+      color: var(--gold);
+      font-weight: 800;
+      margin-right: 10px;
     }
 
-    .pricing {
-      background: var(--navy-light);
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 220px 220px;
+      gap: 15px;
     }
 
+    .gallery-grid img {
+      height: 100%;
+      border-radius: 5px;
+    }
+
+    .gallery-grid img:first-child {
+      grid-row: span 2;
+    }
+
+    /* Process */
+    .process {
+      background: var(--green-dark);
+      color: white;
+    }
+
+    .process h2 {
+      color: white;
+    }
+
+    .process .section-heading p {
+      color: #c8d4ca;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 15px;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .process-step h3 {
+      font-size: 1.2rem;
+      margin-bottom: 9px;
+    }
+
+    .process-step p {
+      color: #c8d4ca;
+      font-size: 0.9rem;
+    }
+
+    /* Pricing */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -289,113 +415,103 @@
     }
 
     .price-card {
-      background: #223337;
-      padding: 35px 28px;
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 6px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 30px;
+      text-align: center;
+      background: white;
     }
 
     .price-card.featured {
-      border: 2px solid var(--green-light);
-      transform: translateY(-8px);
+      border: 2px solid var(--gold);
+      box-shadow: var(--shadow);
     }
 
     .price-card h3 {
-      font-size: 24px;
-      margin-bottom: 12px;
+      color: var(--green-dark);
+      font-size: 1.35rem;
     }
 
     .price {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      color: var(--green-light);
-      margin-bottom: 5px;
+      color: var(--green);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin: 16px 0 5px;
     }
 
     .price-card p {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
     }
 
     .price-card ul {
       list-style: none;
-      margin: 24px 0;
-      color: #e0e6e0;
-      font-size: 14px;
+      margin: 20px 0 25px;
+      text-align: left;
     }
 
     .price-card li {
       padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
     }
 
-    .gallery-grid {
+    .price-card li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 800;
+      margin-right: 9px;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 70px 0;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(rgba(23, 52, 38, 0.9), rgba(23, 52, 38, 0.9)),
+        url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1800&q=85") center/cover;
+    }
+
+    .cta h2 {
+      color: white;
+    }
+
+    .cta p {
+      color: #e1e9e2;
+      max-width: 620px;
+      margin: 0 auto 25px;
+    }
+
+    /* Contact */
+    .contact-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .gallery-item {
-      overflow: hidden;
-      border-radius: 6px;
-      background: var(--navy-light);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      display: block;
-      transition: transform .4s;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.035);
-    }
-
-    .gallery-caption {
-      padding: 16px 20px;
-      font-weight: 600;
-    }
-
-    .gallery-disclosure {
-      font-size: 11px;
-      color: var(--muted);
-      padding: 0 20px 17px;
-    }
-
-    .quote-section {
-      background: var(--cream);
-      color: var(--navy);
-    }
-
-    .quote-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 65px;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 55px;
       align-items: start;
     }
 
-    .quote-copy h2 {
-      font-size: clamp(34px, 4vw, 48px);
-      margin-bottom: 20px;
-    }
-
-    .quote-copy p {
-      color: #64716a;
-      margin-bottom: 20px;
+    .contact-copy p {
+      color: var(--muted);
+      margin: 15px 0;
     }
 
     .contact-detail {
-      margin: 15px 0;
-      font-weight: 600;
+      margin-top: 22px;
     }
 
-    form {
-      background: white;
-      padding: 35px;
-      border-radius: 6px;
-      box-shadow: 0 10px 35px rgba(0,0,0,.06);
+    .contact-detail strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 3px;
+    }
+
+    .contact-form {
+      padding: 32px;
+      background: var(--cream);
+      border-radius: 7px;
     }
 
     .form-row {
@@ -404,421 +520,545 @@
       gap: 15px;
     }
 
-    label {
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
       display: block;
-      font-size: 12px;
+      font-size: 0.88rem;
       font-weight: 700;
       margin-bottom: 6px;
     }
 
-    input, select, textarea {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
       width: 100%;
-      padding: 13px;
-      margin-bottom: 18px;
-      border: 1px solid #dce2dc;
+      padding: 12px;
+      border: 1px solid #d6ddd5;
       border-radius: 4px;
-      font-family: inherit;
-      font-size: 14px;
-      background: #fcfcfa;
+      background: white;
+      color: var(--text);
     }
 
-    textarea {
-      min-height: 120px;
+    .form-group textarea {
+      min-height: 125px;
       resize: vertical;
     }
 
-    form button {
-      border: none;
-      cursor: pointer;
+    .contact-form .btn {
       width: 100%;
-      font-family: inherit;
     }
 
-    .form-disclosure {
-      font-size: 11px;
-      color: #6d786f;
-      margin-top: 14px;
-    }
-
-    footer {
-      background: #0b1418;
-      padding: 35px 24px;
-      text-align: center;
+    .form-note {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 0.78rem;
+      margin-top: 12px;
+    }
+
+    /* Footer */
+    footer {
+      background: #10271b;
+      color: #dce5dd;
+      padding: 35px 0;
+      text-align: center;
     }
 
     footer .logo {
+      color: white;
       display: inline-block;
-      margin-bottom: 12px;
+      margin-bottom: 15px;
     }
 
-    .footer-demo {
-      margin-top: 12px;
-      font-size: 11px;
+    footer p {
+      color: #b9c8bc;
+      font-size: 0.85rem;
+      margin: 7px 0;
     }
 
-    @media(max-width: 850px) {
-      .nav {
-        flex-direction: column;
-      }
+    .demo-note {
+      background: #f0eee7;
+      color: #555e54;
+      padding: 13px 20px;
+      text-align: center;
+      font-size: 0.76rem;
+    }
 
+    @media (max-width: 850px) {
       .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
         gap: 14px;
+        font-size: 0.82rem;
       }
 
-      .service-grid, .pricing-grid {
+      .services-grid,
+      .pricing-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .about-grid, .quote-grid {
+      .about-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
         gap: 35px;
       }
+
+      .about-image {
+        height: 350px;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    @media(max-width: 580px) {
+    @media (max-width: 650px) {
+      .navbar {
+        min-height: 70px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 22px 5%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 0 12px 18px rgba(0,0,0,0.08);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
       .hero {
-        min-height: 570px;
+        min-height: 550px;
       }
 
       .hero-content {
-        padding: 75px 22px;
+        padding: 75px 0;
       }
 
-      .btn-outline {
-        margin: 12px 0 0;
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
       }
 
-      .service-grid, .pricing-grid, .gallery-grid, .form-row {
+      .services-grid,
+      .pricing-grid,
+      .process-grid {
         grid-template-columns: 1fr;
       }
 
-      .price-card.featured {
-        transform: none;
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 180px 180px 180px;
       }
 
-      .gallery-item img {
-        height: 260px;
+      .gallery-grid img:first-child {
+        grid-row: auto;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .contact-form {
+        padding: 22px;
       }
 
       .section {
-        padding: 70px 20px;
-      }
-
-      form {
-        padding: 23px;
+        padding: 65px 0;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <div class="demo-notice">
-    DEMO WEBSITE — SAMPLE DESIGN BY BRIGHTPATH WEB DESIGN — NOT A REAL LANDSCAPING COMPANY
+  <div class="topbar">
+    Thoughtful landscaping. Beautiful outdoor living.
   </div>
 
   <header>
-    <nav class="nav">
-      <a href="#" class="logo">Evergreen <span>Outdoor Living</span></a>
+    <div class="container navbar">
+      <a href="#" class="logo">
+        Evergreen
+        <span>Outdoor Living</span>
+      </a>
 
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact" class="nav-cta">Request a Quote</a>
-      </div>
-    </nav>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Our Work</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact" class="btn">Get a Free Quote</a></li>
+      </ul>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="eyebrow">Thoughtful Outdoor Design & Care</div>
-      <h1>Bring Your Outdoor Space to Life.</h1>
-      <p>
-        From beautifully maintained lawns to inviting outdoor spaces,
-        discover how thoughtful landscaping can transform the way you enjoy your home.
-      </p>
-      <a href="#contact" class="btn">Request a Free Quote</a>
-      <a href="#services" class="btn btn-outline">Explore Services</a>
-    </div>
-  </section>
-
-  <section class="section services" id="services">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">What We Do</div>
-        <h2>Complete Care for Your Outdoor Space</h2>
-        <p>
-          Professional landscaping services designed to make your property
-          look welcoming, polished, and beautiful throughout the seasons.
-        </p>
-      </div>
-
-      <div class="service-grid">
-        <div class="service-card">
-          <div class="service-icon">🌱</div>
-          <h3>Lawn Maintenance</h3>
-          <p>Routine mowing, edging, trimming, and lawn care to keep your yard looking its best.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🌳</div>
-          <h3>Landscape Design</h3>
-          <p>Thoughtful planting layouts and outdoor designs that complement your property.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🌷</div>
-          <h3>Planting & Garden Beds</h3>
-          <p>Seasonal flowers, shrubs, garden beds, and planting arrangements.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🪵</div>
-          <h3>Mulch Installation</h3>
-          <p>Fresh mulch installation to give garden beds a clean and finished appearance.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🍂</div>
-          <h3>Seasonal Cleanups</h3>
-          <p>Spring and fall property cleanups, leaf removal, and general yard preparation.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🧱</div>
-          <h3>Hardscaping</h3>
-          <p>Beautiful patios, walkways, stone borders, and functional outdoor features.</p>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Your outdoor space, reimagined</span>
+          <h1>Bring Your Outdoor Vision to Life.</h1>
+          <p>
+            From fresh lawn care to beautiful landscape transformations,
+            we help create outdoor spaces you'll love coming home to.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn">Request a Free Quote</a>
+            <a href="#services" class="btn btn-outline">Explore Our Services</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="about">
-    <div class="container about-grid">
-      <img
-        class="about-image"
-        src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1100&q=85"
-        alt="Beautiful home surrounded by landscaped outdoor space"
-        loading="lazy"
-      >
-
-      <div class="about-copy">
-        <div class="eyebrow">A Better Outdoor Experience</div>
-        <h2>Your Property Deserves to Stand Out.</h2>
-        <p>
-          A beautiful outdoor space does more than improve curb appeal.
-          It creates a welcoming first impression and gives you more room
-          to enjoy the place you call home.
-        </p>
-        <p>
-          Whether you're refreshing your garden beds or planning a complete
-          outdoor transformation, the right approach can make all the difference.
-        </p>
-
-        <ul class="check-list">
-          <li>Attention to detail</li>
-          <li>Thoughtful outdoor planning</li>
-          <li>Services for a variety of property needs</li>
-          <li>Clear communication from start to finish</li>
-        </ul>
-
-        <a href="#contact" class="btn">Let's Discuss Your Project</a>
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <strong>Personalized Designs</strong>
+          <span>Plans shaped around your property</span>
+        </div>
+        <div class="trust-item">
+          <strong>Quality Workmanship</strong>
+          <span>Careful attention to every detail</span>
+        </div>
+        <div class="trust-item">
+          <strong>Clear Communication</strong>
+          <span>From the first call to the final walkthrough</span>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section pricing" id="pricing">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">Example Service Packages</div>
-        <h2>Simple Starting Points</h2>
-        <p>
-          Every property is different. These sample packages demonstrate
-          how services and pricing could be presented on a professional website.
-        </p>
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">What we do</span>
+          <h2>Landscaping Services That Make a Difference</h2>
+          <p>
+            Whether you need routine maintenance or a complete outdoor refresh,
+            we can help make your property look its best.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">🌱</div>
+            <h3>Lawn Care & Maintenance</h3>
+            <p>Keep your lawn neat, healthy, and welcoming with dependable mowing and seasonal care.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🌿</div>
+            <h3>Landscape Design</h3>
+            <p>Bring your ideas together with thoughtful plant choices, layouts, and outdoor design details.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🌸</div>
+            <h3>Garden & Flower Beds</h3>
+            <p>Add color and character with fresh planting, bed preparation, and garden improvements.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🪨</div>
+            <h3>Mulch & Rock Installation</h3>
+            <p>Give your landscape a clean, finished appearance with mulch, decorative stone, and edging.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✂️</div>
+            <h3>Shrub & Hedge Trimming</h3>
+            <p>Keep shrubs and hedges shaped, tidy, and in proportion with your outdoor space.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🍂</div>
+            <h3>Seasonal Cleanups</h3>
+            <p>Prepare your property for changing seasons with leaf removal and general landscape cleanup.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="pricing-grid">
-        <div class="price-card">
-          <h3>Lawn Essentials</h3>
-          <div class="price">From $45</div>
-          <p>Example starting price per visit.</p>
-          <ul>
-            <li>Lawn mowing</li>
-            <li>Edging and trimming</li>
-            <li>Basic cleanup</li>
-            <li>Routine maintenance options</li>
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div>
+          <img
+            class="about-image"
+            src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1100&q=85"
+            alt="Beautiful landscaped garden with a neat green lawn"
+            loading="lazy">
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">A better kind of outdoor care</span>
+          <h2>We Believe Your Yard Should Feel Like Home.</h2>
+          <p>
+            At Evergreen Outdoor Living, we believe a well-designed outdoor
+            space can make everyday life a little more enjoyable.
+          </p>
+          <p>
+            Our approach is simple: listen to what you want, understand your
+            property, and create a plan that fits your vision and budget.
+          </p>
+
+          <ul class="check-list">
+            <li>Thoughtful recommendations</li>
+            <li>Respect for your property</li>
+            <li>Clear project expectations</li>
+            <li>Attention to the finishing details</li>
           </ul>
-          <a href="#contact" class="btn">Request Pricing</a>
-        </div>
 
-        <div class="price-card featured">
-          <h3>Landscape Refresh</h3>
-          <div class="price">From $250</div>
-          <p>Example starting project price.</p>
-          <ul>
-            <li>Garden bed refresh</li>
-            <li>Mulch installation</li>
-            <li>Seasonal planting</li>
-            <li>Property cleanup</li>
-          </ul>
-          <a href="#contact" class="btn">Request Pricing</a>
-        </div>
-
-        <div class="price-card">
-          <h3>Outdoor Transformation</h3>
-          <div class="price">Custom Quote</div>
-          <p>For larger outdoor projects.</p>
-          <ul>
-            <li>Landscape planning</li>
-            <li>Planting and garden design</li>
-            <li>Hardscape features</li>
-            <li>Personalized project estimate</li>
-          </ul>
-          <a href="#contact" class="btn">Discuss Your Project</a>
+          <a href="#contact" class="btn">Let's Talk About Your Yard</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="gallery">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">Outdoor Inspiration</div>
-        <h2>Ideas for Your Next Project</h2>
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Outdoor inspiration</span>
+          <h2>Ideas for Your Next Outdoor Project</h2>
+          <p>
+            Explore a few examples of the outdoor spaces and landscape details
+            that can inspire your own project.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1000&q=85" alt="Lush garden planting and greenery" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800&q=85" alt="Fresh green lawn and garden" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599685315640-5ec7c7f6f3c7?auto=format&fit=crop&w=800&q=85" alt="Garden landscaping details" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85" alt="Beautiful home and outdoor landscaping" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=85" alt="Green plants and garden foliage" loading="lazy">
+        </div>
+        <p class="form-note" style="text-align:center;margin-top:18px;">
+          Gallery photos are illustrative stock images, not verified customer projects.
+        </p>
+      </div>
+    </section>
+
+    <section class="section process">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Simple from start to finish</span>
+          <h2>A Clear Path to a Better Yard</h2>
+          <p>We keep the process straightforward so you know what to expect.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="step-number">01</div>
+            <h3>Get in Touch</h3>
+            <p>Tell us about your property and what you'd like to improve.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">02</div>
+            <h3>Discuss Your Plan</h3>
+            <p>We'll learn more about your goals, priorities, and budget.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">03</div>
+            <h3>Review Your Quote</h3>
+            <p>Get a clear project proposal with the expected work and costs.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">04</div>
+            <h3>Enjoy Your Space</h3>
+            <p>Move forward with an outdoor space designed around you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Starting price examples</span>
+          <h2>Options for Different Outdoor Needs</h2>
+          <p>
+            Every property is different. These sample prices help illustrate
+            how services might be presented; actual estimates depend on the project.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Lawn Refresh</h3>
+            <div class="price">From $75</div>
+            <p>For a basic lawn maintenance visit.</p>
+            <ul>
+              <li>Lawn mowing</li>
+              <li>Trimming around edges</li>
+              <li>Clipping cleanup</li>
+            </ul>
+            <a href="#contact" class="btn">Request an Estimate</a>
+          </article>
+
+          <article class="price-card featured">
+            <h3>Garden Refresh</h3>
+            <div class="price">From $250</div>
+            <p>For a small garden bed update.</p>
+            <ul>
+              <li>Basic bed preparation</li>
+              <li>Mulch installation</li>
+              <li>Simple planting layout</li>
+            </ul>
+            <a href="#contact" class="btn">Request an Estimate</a>
+          </article>
+
+          <article class="price-card">
+            <h3>Landscape Upgrade</h3>
+            <div class="price">From $600</div>
+            <p>For a larger outdoor improvement.</p>
+            <ul>
+              <li>Project consultation</li>
+              <li>Landscape improvements</li>
+              <li>Customized project quote</li>
+            </ul>
+            <a href="#contact" class="btn">Request an Estimate</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <span class="eyebrow">Let's grow something beautiful</span>
+        <h2>Ready to Give Your Yard a Fresh Look?</h2>
         <p>
-          Explore examples of beautiful outdoor spaces and landscaping styles.
+          Tell us what you're envisioning. We'll help you explore the next steps
+          toward a more beautiful and functional outdoor space.
         </p>
+        <a href="#contact" class="btn">Start Your Quote Request</a>
       </div>
+    </section>
 
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img
-            src="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=1200&q=85"
-            alt="Beautiful landscaped garden and lawn"
-            loading="lazy"
-          >
-          <div class="gallery-caption">Beautiful Garden Spaces</div>
-          <div class="gallery-disclosure">Illustrative stock photography — not a completed client project.</div>
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <span class="eyebrow">Let's get started</span>
+          <h2>Tell Us About Your Project.</h2>
+          <p>
+            Have a lawn that needs attention, a garden that needs a refresh,
+            or a bigger outdoor vision? Send us a few details and we'll be
+            ready to discuss your project.
+          </p>
+
+          <div class="contact-detail">
+            <strong>Service Area</strong>
+            <span class="muted">Your local community and surrounding areas</span>
+          </div>
+
+          <div class="contact-detail">
+            <strong>Estimates</strong>
+            <span class="muted">Request a project-specific estimate</span>
+          </div>
+
+          <div class="contact-detail">
+            <strong>Getting Started</strong>
+            <span class="muted">Use the form to tell us what you have in mind.</span>
+          </div>
         </div>
 
-        <div class="gallery-item">
-          <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
-            alt="Modern home with attractive outdoor landscaping"
-            loading="lazy"
-          >
-          <div class="gallery-caption">Outdoor Living & Curb Appeal</div>
-          <div class="gallery-disclosure">Illustrative stock photography — not a completed client project.</div>
-        </div>
+        <form class="contact-form" action="https://formspree.io/f/xpppkwje" method="POST">
+          <input type="hidden" name="_subject" value="New Landscaping Demo Quote Request">
 
-        <div class="gallery-item">
-          <img
-            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=85"
-            alt="Green plants and garden landscaping"
-            loading="lazy"
-          >
-          <div class="gallery-caption">Garden Design & Planting</div>
-          <div class="gallery-disclosure">Illustrative stock photography — not a completed client project.</div>
-        </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" placeholder="Full name" required>
+            </div>
 
-        <div class="gallery-item">
-          <img
-            src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=85"
-            alt="Home exterior with landscaped yard"
-            loading="lazy"
-          >
-          <div class="gallery-caption">Welcoming Property Designs</div>
-          <div class="gallery-disclosure">Illustrative stock photography — not a completed client project.</div>
-        </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Needed *</label>
+              <select id="service" name="service" required>
+                <option value="">Choose a service</option>
+                <option>Lawn Care & Maintenance</option>
+                <option>Landscape Design</option>
+                <option>Garden & Flower Beds</option>
+                <option>Mulch & Rock Installation</option>
+                <option>Shrub & Hedge Trimming</option>
+                <option>Seasonal Cleanup</option>
+                <option>Other / Not Sure Yet</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="details">Tell Us About Your Project *</label>
+            <textarea id="details" name="project_details" placeholder="Describe your yard, project goals, and anything else we should know..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn">Send Quote Request</button>
+          <p class="form-note">
+            This is a demonstration form. Submissions are routed to BrightPath Web Design
+            and do not contact a real landscaping company or schedule service.
+          </p>
+        </form>
       </div>
-    </div>
-  </section>
-
-  <section class="section quote-section" id="contact">
-    <div class="container quote-grid">
-      <div class="quote-copy">
-        <div class="eyebrow">Let's Get Started</div>
-        <h2>Tell Us About Your Outdoor Project.</h2>
-        <p>
-          Have an idea for your yard? Share a few details and request
-          an estimate for your landscaping project.
-        </p>
-        <p>
-          This sample contact section demonstrates how a landscaping
-          business can make it easy for potential customers to get in touch.
-        </p>
-
-        <div class="contact-detail">✉ brightpathwebdesign@proton.me</div>
-        <div class="contact-detail">Serving homeowners and outdoor spaces</div>
-      </div>
-
-      <form action="https://formspree.io/f/xpppkwje" method="POST">
-        <input type="hidden" name="_subject" value="Landscaping Demo Quote Request">
-
-        <div class="form-row">
-          <div>
-            <label for="name">Your Name *</label>
-            <input type="text" id="name" name="name" placeholder="Full name" required>
-          </div>
-
-          <div>
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div>
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Your phone number">
-          </div>
-
-          <div>
-            <label for="service">Service Needed *</label>
-            <select id="service" name="service" required>
-              <option value="">Choose a service</option>
-              <option>Lawn Maintenance</option>
-              <option>Landscape Design</option>
-              <option>Mulch Installation</option>
-              <option>Planting and Garden Beds</option>
-              <option>Seasonal Cleanup</option>
-              <option>Hardscaping</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
-
-        <label for="details">Tell Us About Your Project *</label>
-        <textarea id="details" name="project_details" placeholder="Describe your property and what you have in mind..." required></textarea>
-
-        <button type="submit" class="btn">Submit Quote Request</button>
-
-        <p class="form-disclosure">
-          DEMO FORM: This is a sample website, not a real landscaping company.
-          Submissions are sent to BrightPath Web Design for demonstration purposes
-          and do not request service from an actual landscaping business.
-          Please do not submit sensitive personal information.
-        </p>
-      </form>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <a href="#" class="logo">Evergreen <span>Outdoor Living</span></a>
-    <p>Thoughtful Outdoor Design & Care</p>
-    <p class="footer-demo">
-      DEMO WEBSITE — Fictional business created by BrightPath Web Design.
-      All photographs are illustrative stock images, not client work.
-    </p>
-    <p style="margin-top:18px;">© 2026 Evergreen Outdoor Living. Sample website.</p>
+    <div class="container">
+      <a href="#" class="logo">
+        Evergreen
+        <span>Outdoor Living</span>
+      </a>
+      <p>Thoughtful landscaping for outdoor spaces you'll love.</p>
+      <p>© 2026 Evergreen Outdoor Living. Demonstration website.</p>
+    </div>
   </footer>
 
+  <div class="demo-note">
+    Demo website for BrightPath Web Design. Evergreen Outdoor Living is fictional.
+    Photos are illustrative stock imagery, and prices are examples only.
+  </div>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+  </script>
 </body>
 </html>
