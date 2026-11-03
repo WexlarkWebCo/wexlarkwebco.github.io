@@ -2,667 +2,859 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="BrightPath Web Design builds modern, professional websites for small businesses.">
-<title>BrightPath Web Design | Websites That Win Customers</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --bg: #0b1424;
-  --panel: #111f34;
-  --panel-light: #172943;
-  --blue: #3985ff;
-  --blue-light: #85b5ff;
-  --text: #f4f7fc;
-  --muted: #a8b5c8;
-  --border: #ffffff18;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.65;
-}
-
-a { color: inherit; text-decoration: none; }
-
-.container {
-  width: min(1120px, calc(100% - 40px));
-  margin: auto;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: #091321f5;
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(12px);
-}
-
-nav {
-  min-height: 78px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.logo {
-  font-size: 27px;
-  font-weight: 800;
-  letter-spacing: -1.3px;
-  white-space: nowrap;
-}
-
-.logo span { color: var(--blue); }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 22px;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.nav-links a:not(.btn):hover { color: var(--blue-light); }
-
-.btn {
-  display: inline-block;
-  background: var(--blue);
-  color: white;
-  padding: 13px 21px;
-  border-radius: 6px;
-  font-weight: 800;
-  font-size: 14px;
-  border: 1px solid var(--blue);
-  transition: .2s;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: #216de0;
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background: transparent;
-  border-color: #ffffff55;
-}
-
-.btn-outline:hover {
-  background: var(--blue);
-  border-color: var(--blue);
-}
-
-.nav-demo {
-  color: var(--blue-light);
-  border-bottom: 1px solid transparent;
-  padding-bottom: 3px;
-}
-
-.nav-demo:hover { border-color: var(--blue-light); }
-
-.hero {
-  padding: 115px 0 105px;
-  background:
-    radial-gradient(ellipse at 80% 20%, #1d4d8c55, transparent 42%),
-    linear-gradient(135deg, #0b1424, #102746);
-}
-
-.eyebrow {
-  color: var(--blue-light);
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  margin-bottom: 16px;
-}
-
-h1, h2, h3 { line-height: 1.2; }
-
-.hero h1 {
-  max-width: 850px;
-  font-size: clamp(42px, 7vw, 70px);
-  letter-spacing: -3px;
-  margin-bottom: 22px;
-}
-
-.hero h1 span { color: var(--blue-light); }
-
-.hero p {
-  max-width: 660px;
-  color: #c5d1e1;
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 13px;
-}
-
-.trust-line {
-  color: #aebdd1;
-  font-size: 13px;
-  margin-top: 30px;
-}
-
-section { padding: 82px 0; }
-
-.section-heading {
-  max-width: 700px;
-  text-align: center;
-  margin: 0 auto 42px;
-}
-
-.section-heading h2 {
-  font-size: clamp(30px, 5vw, 43px);
-  letter-spacing: -1.5px;
-  margin-bottom: 13px;
-}
-
-.section-heading p { color: var(--muted); }
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.card-body { padding: 28px; }
-
-.card h3 {
-  font-size: 21px;
-  margin-bottom: 11px;
-}
-
-.card p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.icon {
-  font-size: 31px;
-  margin-bottom: 15px;
-}
-
-#services { background: #0e1a2c; }
-
-#pricing, #maintenance { background: #0c1628; }
-
-.price-card {
-  padding: 30px;
-  position: relative;
-}
-
-.price-card.featured {
-  border: 2px solid var(--blue);
-  transform: translateY(-8px);
-}
-
-.price-label {
-  color: var(--blue-light);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.price {
-  font-size: 43px;
-  font-weight: 900;
-  letter-spacing: -2px;
-  margin: 12px 0 4px;
-}
-
-.price-note {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 23px;
-}
-
-.price-card ul {
-  padding-left: 20px;
-  color: #d5deec;
-  font-size: 14px;
-  margin: 20px 0 25px;
-}
-
-.price-card li { margin: 9px 0; }
-
-.price-card .btn { width: 100%; text-align: center; }
-
-.pricing-note {
-  text-align: center;
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 28px;
-}
-
-.support-box {
-  max-width: 850px;
-  margin: 45px auto 0;
-  background: #14243b;
-  border: 1px solid #3985ff55;
-  border-radius: 13px;
-  padding: 28px;
-}
-
-.support-box h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.support-box p {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
-.support-box ul {
-  padding-left: 20px;
-  color: #d5deec;
-  font-size: 14px;
-}
-
-.support-box li { margin: 8px 0; }
-
-.industry-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-
-.industry-list span {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  padding: 12px 18px;
-  border-radius: 30px;
-  color: #d4deec;
-  font-size: 14px;
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.step-number {
-  color: var(--blue);
-  font-size: 32px;
-  font-weight: 900;
-  margin-bottom: 12px;
-}
-
-.step h3 { margin-bottom: 9px; }
-
-.step p { color: var(--muted); font-size: 14px; }
-
-.contact-section {
-  text-align: center;
-  background: linear-gradient(135deg, #12356b, #0b172b);
-  padding: 85px 20px;
-}
-
-.contact-section h2 {
-  font-size: clamp(30px, 4vw, 45px);
-  margin-bottom: 15px;
-}
-
-.contact-section p {
-  color: #d0dcef;
-  margin-bottom: 28px;
-}
-
-.contact-email {
-  display: block;
-  color: var(--blue-light);
-  margin-top: 20px;
-  font-weight: 700;
-}
-
-footer {
-  padding: 35px 0;
-  color: #8392a8;
-  font-size: 13px;
-  text-align: center;
-}
-
-footer p { margin-top: 7px; }
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin: 18px 0;
-}
-
-.footer-links a:hover { color: var(--blue-light); }
-
-@media(max-width: 850px) {
-  .cards, .steps { grid-template-columns: 1fr 1fr; }
-  .price-card.featured { transform: none; }
-  nav { padding: 16px 0; align-items: flex-start; }
-  .nav-links { gap: 12px 16px; }
-}
-
-@media(max-width: 600px) {
-  nav { flex-direction: column; align-items: center; }
-  .nav-links { justify-content: center; }
-  .cards, .steps { grid-template-columns: 1fr; }
-  .hero { padding: 75px 0; }
-  .hero h1 { letter-spacing: -2px; }
-  section { padding: 65px 0; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BrightPath Web Design builds professional, affordable websites for small businesses. Explore our services, pricing, and website demos.">
+  <title>BrightPath Web Design | Websites That Help Small Businesses Grow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #101b2c;
+      --navy-light: #17263b;
+      --blue: #4779b5;
+      --blue-light: #76a6df;
+      --gold: #c5a66b;
+      --white: #ffffff;
+      --muted: #b7c3d2;
+      --light: #f3f6fa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(16, 27, 44, .97);
+      border-bottom: 1px solid rgba(255,255,255,.09);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      max-width: 1250px;
+      margin: auto;
+      min-height: 82px;
+      padding: 15px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      font-weight: 800;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--blue-light);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 21px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #e1e8f1;
+    }
+
+    .nav-links a {
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue-light);
+    }
+
+    .demo-nav {
+      color: var(--blue-light);
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      padding: 11px 17px;
+      border-radius: 4px;
+      color: white !important;
+    }
+
+    .nav-cta:hover {
+      background: #5a8ac4;
+    }
+
+    .hero {
+      min-height: 690px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(10,20,35,.96), rgba(10,20,35,.80), rgba(10,20,35,.40)),
+        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2000&q=85') center/cover;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 110px 24px;
+    }
+
+    .eyebrow {
+      color: var(--blue-light);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 76px);
+      max-width: 800px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 610px;
+      color: #d2dce9;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .4px;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      background: #5c8cc8;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.55);
+      margin-left: 10px;
+    }
+
+    .section {
+      padding: 95px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(34px, 4vw, 49px);
+      margin-bottom: 17px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .services {
+      background: var(--light);
+      color: var(--navy);
+    }
+
+    .services .section-heading p {
+      color: #657184;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px;
+      border: 1px solid #e2e7ee;
+      border-radius: 5px;
+      transition: .2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    }
+
+    .service-icon {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #657184;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .why-image {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .why-copy h2 {
+      font-size: clamp(34px, 4vw, 48px);
+      margin-bottom: 20px;
+    }
+
+    .why-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 25px 0 30px;
+    }
+
+    .check-list li {
+      margin: 12px 0;
+      color: #e0e7f0;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--blue-light);
+      font-weight: 800;
+      margin-right: 12px;
+    }
+
+    .pricing {
+      background: var(--navy-light);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .price-card {
+      background: #20324a;
+      padding: 35px 28px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 5px;
+    }
+
+    .price-card.featured {
+      border: 2px solid var(--blue-light);
+      transform: translateY(-8px);
+    }
+
+    .price-card h3 {
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 39px;
+      color: var(--blue-light);
+      margin-bottom: 6px;
+    }
+
+    .price-card > p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin: 24px 0;
+      font-size: 14px;
+      color: #e2e9f2;
+    }
+
+    .price-card li {
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,.09);
+    }
+
+    .maintenance-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .maintenance-card {
+      background: #192a40;
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 30px;
+      border-radius: 5px;
+    }
+
+    .maintenance-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .maintenance-price {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--blue-light);
+      margin-bottom: 15px;
+    }
+
+    .maintenance-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .maintenance-terms {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 20px;
+    }
+
+    .process {
+      background: var(--light);
+      color: var(--navy);
+    }
+
+    .process .section-heading p {
+      color: #657184;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .process-card {
+      padding: 30px;
+      background: white;
+      border: 1px solid #e2e7ee;
+      border-radius: 5px;
+    }
+
+    .process-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      color: var(--blue);
+      margin-bottom: 15px;
+    }
+
+    .process-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      color: #657184;
+      font-size: 14px;
+    }
+
+    .contact {
+      background: var(--navy-light);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .contact-copy h2 {
+      font-size: clamp(34px, 4vw, 48px);
+      margin-bottom: 20px;
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .contact-email {
+      color: var(--blue-light);
+      font-weight: 700;
+    }
+
+    .contact-panel {
+      background: #20324a;
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 35px;
+      border-radius: 5px;
+    }
+
+    .contact-panel h3 {
+      font-size: 25px;
+      margin-bottom: 14px;
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+      margin-bottom: 23px;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #0b1421;
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer .logo {
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+
+    footer p {
+      margin: 7px 0;
+    }
+
+    @media(max-width: 1050px) {
+      .nav {
+        flex-direction: column;
+        padding: 18px 20px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media(max-width: 800px) {
+      .service-grid,
+      .pricing-grid,
+      .maintenance-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+    }
+
+    @media(max-width: 560px) {
+      .hero {
+        min-height: 600px;
+      }
+
+      .hero-content {
+        padding: 80px 22px;
+      }
+
+      .btn-outline {
+        margin: 12px 0 0;
+      }
+
+      .service-grid,
+      .pricing-grid,
+      .maintenance-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .why-image {
+        height: 300px;
+      }
+
+      .contact-panel {
+        padding: 25px;
+      }
+
+      .nav-links {
+        gap: 13px;
+        font-size: 11px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container">
-    <nav>
-      <a class="logo" href="#">BrightPath<span>.</span></a>
+  <header>
+    <nav class="nav">
+      <a href="#" class="logo">BrightPath <span>Web Design</span></a>
 
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#maintenance">Maintenance</a>
-        <a href="auto-detailing.html" class="nav-demo">Auto Detailing Demo</a>
-        <a href="barbershop.html" class="nav-demo">Barbershop Demo</a>
-        <a class="btn nav-quote" href="#contact">Get a Quote</a>
+        <a href="auto-detailing.html" class="demo-nav">Auto Detailing Demo</a>
+        <a href="barbershop.html" class="demo-nav">Barbershop Demo</a>
+        <a href="landscaping.html" class="demo-nav">Landscaping Demo</a>
+        <a href="#contact" class="nav-cta">Get a Quote</a>
       </div>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main>
-
-<section class="hero">
-  <div class="container">
-    <div class="eyebrow">Web Design for Small Businesses Nationwide</div>
-    <h1>Your Business Deserves a Website That <span>Wins Customers.</span></h1>
-    <p>We build modern, professional websites that help small businesses stand out, earn trust, and turn visitors into paying customers.</p>
-
-    <div class="hero-buttons">
-      <a class="btn" href="#contact">Get Your Free Quote</a>
-      <a class="btn btn-outline" href="#services">Explore Our Services</a>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Professional Websites for Small Businesses</div>
+      <h1>Your Business Deserves a Website That Works as Hard as You Do.</h1>
+      <p>
+        We build clean, modern, professional websites that help small businesses
+        make a stronger first impression, showcase their services, and connect
+        with more potential customers.
+      </p>
+      <a href="#contact" class="btn">Start Your Website</a>
+      <a href="#pricing" class="btn btn-outline">View Our Pricing</a>
     </div>
+  </section>
 
-    <div class="trust-line">Professional design · Mobile-friendly · Built for your business</div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">What We Do</div>
-      <h2>Everything Your Website Needs</h2>
-      <p>Professional web design without the confusion or agency-sized price tag.</p>
-    </div>
-
-    <div class="cards">
-      <div class="card card-body">
-        <div class="icon">💻</div>
-        <h3>Custom Website Design</h3>
-        <p>Clean, professional websites designed around your business and the customers you want to reach.</p>
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">What We Offer</div>
+        <h2>Everything Your Business Needs to Get Online.</h2>
+        <p>
+          From a professional first website to ongoing updates, our services
+          are designed to help small businesses establish a strong online presence.
+        </p>
       </div>
 
-      <div class="card card-body">
-        <div class="icon">📱</div>
-        <h3>Mobile-Friendly Design</h3>
-        <p>Websites that look great and work smoothly on phones, tablets, and computers.</p>
-      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Custom Website Design</h3>
+          <p>Modern, professional websites designed to match your business and make a strong first impression.</p>
+        </div>
 
-      <div class="card card-body">
-        <div class="icon">🚀</div>
-        <h3>Business Growth</h3>
-        <p>Clear calls to action and contact options that make it easier for customers to reach you.</p>
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Mobile-Friendly Design</h3>
+          <p>Responsive layouts that make your website easy to use on phones, tablets, and computers.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Business-Focused Pages</h3>
+          <p>Clear service descriptions, pricing information, and contact options that help visitors take action.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✉️</div>
+          <h3>Contact Forms</h3>
+          <p>Convenient inquiry forms that help potential customers reach your business.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Website Maintenance</h3>
+          <p>Optional ongoing support for content changes, updates, and agreed website improvements.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🚀</div>
+          <h3>Website Launch</h3>
+          <p>Help getting your new website published and ready for customers to visit.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="pricing">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">Simple, Transparent Pricing</div>
-      <h2>Choose the Right Website Package</h2>
-      <p>Straightforward starting prices for businesses ready to build a stronger online presence.</p>
-    </div>
+  <section class="section" id="about">
+    <div class="container why-grid">
+      <img
+        class="why-image"
+        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1100&q=85"
+        alt="Professional modern workspace"
+        loading="lazy"
+      >
 
-    <div class="cards">
-      <div class="card price-card">
-        <div class="price-label">Starter</div>
-        <h3>Starter Website</h3>
-        <div class="price">$499</div>
-        <div class="price-note">One-time starting price</div>
-        <p>Get your business online with a clean, professional website.</p>
-        <ul>
-          <li>1–3 website pages</li>
-          <li>Mobile-friendly layout</li>
-          <li>Contact information</li>
-          <li>Basic on-page SEO setup</li>
-          <li>One revision round</li>
+      <div class="why-copy">
+        <div class="eyebrow">Why BrightPath</div>
+        <h2>Professional Design. Straightforward Service.</h2>
+        <p>
+          Your website is often one of the first places potential customers
+          learn about your business. It should look professional, communicate
+          clearly, and make it easy for people to contact you.
+        </p>
+        <p>
+          BrightPath Web Design focuses on practical websites for small
+          businesses, with clear pricing and straightforward communication.
+        </p>
+
+        <ul class="check-list">
+          <li>Professional, modern website designs</li>
+          <li>Mobile-friendly layouts</li>
+          <li>Clear service and contact information</li>
+          <li>Upfront package pricing</li>
+          <li>Optional ongoing maintenance</li>
         </ul>
-        <a class="btn btn-outline" href="mailto:brightpathwebdesign@proton.me?subject=Starter%20Website%20Package">Get Started</a>
-      </div>
 
-      <div class="card price-card featured">
-        <div class="price-label">Most Popular</div>
-        <h3>Business Website</h3>
-        <div class="price">$899</div>
-        <div class="price-note">One-time starting price</div>
-        <p>A stronger online presence for businesses ready to grow.</p>
-        <ul>
-          <li>4–6 website pages</li>
-          <li>Custom professional design</li>
-          <li>Mobile-friendly layout</li>
-          <li>Contact and quote sections</li>
-          <li>Basic on-page SEO setup</li>
-          <li>Two revision rounds</li>
-        </ul>
-        <a class="btn" href="mailto:brightpathwebdesign@proton.me?subject=Business%20Website%20Package">Get Started</a>
-      </div>
-
-      <div class="card price-card">
-        <div class="price-label">Premium</div>
-        <h3>Premium Website</h3>
-        <div class="price">$1,499</div>
-        <div class="price-note">One-time starting price</div>
-        <p>More room for features, content, and a complete business presence.</p>
-        <ul>
-          <li>7+ website pages</li>
-          <li>Custom premium design</li>
-          <li>Mobile-friendly layout</li>
-          <li>Advanced contact sections</li>
-          <li>Basic on-page SEO setup</li>
-          <li>Three revision rounds</li>
-        </ul>
-        <a class="btn btn-outline" href="mailto:brightpathwebdesign@proton.me?subject=Premium%20Website%20Package">Get Started</a>
+        <a href="#contact" class="btn">Let's Talk About Your Website</a>
       </div>
     </div>
+  </section>
 
-    <p class="pricing-note">Prices are starting estimates. Final quotes depend on project scope. Domain registration, hosting, paid services, and special features may cost extra.</p>
-  </div>
-</section>
-
-<section id="maintenance">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">Ongoing Website Support</div>
-      <h2>Keep Your Website Looking Its Best</h2>
-      <p>Choose an optional monthly maintenance plan for help with updates and website changes after launch.</p>
-    </div>
-
-    <div class="cards">
-      <div class="card price-card">
-        <div class="price-label">Basic Care</div>
-        <h3>Basic Maintenance</h3>
-        <div class="price">$49</div>
-        <div class="price-note">Per month</div>
-        <p>For businesses that occasionally need small website updates.</p>
-        <ul>
-          <li>Up to 30 minutes of updates monthly</li>
-          <li>Small text changes</li>
-          <li>Small image replacements</li>
-          <li>Email support for requests</li>
-        </ul>
-        <a class="btn btn-outline" href="mailto:brightpathwebdesign@proton.me?subject=Basic%20Maintenance%20Plan">Choose Basic</a>
+  <section class="section pricing" id="pricing">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Website Packages</div>
+        <h2>Simple, Transparent Pricing.</h2>
+        <p>
+          Choose a package that fits your business. Every project is discussed
+          before work begins so the scope and price are clear.
+        </p>
       </div>
 
-      <div class="card price-card featured">
-        <div class="price-label">Most Popular</div>
-        <h3>Business Maintenance</h3>
-        <div class="price">$99</div>
-        <div class="price-note">Per month</div>
-        <p>For businesses that need regular website attention.</p>
-        <ul>
-          <li>Up to 1 hour of updates monthly</li>
-          <li>Text and image changes</li>
-          <li>Small content updates</li>
-          <li>Broken-link checks upon request</li>
-          <li>Email support for requests</li>
-        </ul>
-        <a class="btn" href="mailto:brightpathwebdesign@proton.me?subject=Business%20Maintenance%20Plan">Choose Business</a>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Starter</h3>
+          <div class="price">$499</div>
+          <p>For businesses that need a professional online starting point.</p>
+          <ul>
+            <li>Up to 3 website pages</li>
+            <li>Mobile-friendly design</li>
+            <li>Business contact information</li>
+            <li>Basic contact form</li>
+            <li>Social media links</li>
+            <li>Website launch assistance</li>
+          </ul>
+          <a href="#contact" class="btn">Get Started</a>
+        </div>
+
+        <div class="price-card featured">
+          <h3>Business</h3>
+          <div class="price">$899</div>
+          <p>For growing businesses that need more room to showcase services.</p>
+          <ul>
+            <li>Up to 5 website pages</li>
+            <li>Custom website design</li>
+            <li>Mobile-friendly layout</li>
+            <li>Service and pricing sections</li>
+            <li>Contact or quote request form</li>
+            <li>Gallery or portfolio section</li>
+            <li>Website launch assistance</li>
+          </ul>
+          <a href="#contact" class="btn">Get Started</a>
+        </div>
+
+        <div class="price-card">
+          <h3>Premium</h3>
+          <div class="price">$1,499</div>
+          <p>For businesses looking for a more complete website experience.</p>
+          <ul>
+            <li>Up to 8 website pages</li>
+            <li>Custom design and layout</li>
+            <li>Mobile-friendly design</li>
+            <li>Expanded service pages</li>
+            <li>Contact and inquiry forms</li>
+            <li>Gallery or portfolio features</li>
+            <li>Additional design refinements</li>
+            <li>Website launch assistance</li>
+          </ul>
+          <a href="#contact" class="btn">Get Started</a>
+        </div>
       </div>
 
-      <div class="card price-card">
-        <div class="price-label">Priority Care</div>
-        <h3>Priority Maintenance</h3>
-        <div class="price">$149</div>
-        <div class="price-note">Per month</div>
-        <p>For businesses that need more frequent updates and support.</p>
-        <ul>
-          <li>Up to 2 hours of updates monthly</li>
-          <li>Text, image, and content changes</li>
-          <li>Small layout adjustments</li>
-          <li>Priority handling of requests</li>
-          <li>Email support for requests</li>
-        </ul>
-        <a class="btn btn-outline" href="mailto:brightpathwebdesign@proton.me?subject=Priority%20Maintenance%20Plan">Choose Priority</a>
-      </div>
+      <p style="color:var(--muted);font-size:12px;margin-top:25px;">
+        Package page limits and included features are subject to the agreed project scope.
+        Domain registration, third-party subscriptions, specialized integrations,
+        and work outside the agreed scope may be quoted separately.
+      </p>
     </div>
+  </section>
 
-    <p class="pricing-note">Monthly plans are optional. Unused update time does not roll over. New pages, redesigns, major repairs, custom features, and third-party fees are quoted separately.</p>
-
-    <div class="support-box">
-      <h3>How Website Support Works</h3>
-      <p>BrightPath Web Design provides maintenance and support when requested by the client. To receive help, clients must notify us when they notice a problem, need an update, or experience an issue with their website.</p>
-      <ul>
-        <li>Clients are responsible for bringing website problems to our attention.</li>
-        <li>We do not provide continuous 24/7 monitoring or automatic problem detection.</li>
-        <li>Work begins after we receive and review a support request.</li>
-        <li>Response and completion times depend on the issue and our agreed service schedule.</li>
-        <li>Work beyond the included monthly time or plan scope may require an additional quote.</li>
-      </ul>
-      <p style="margin-top:15px;">Specific services, response expectations, billing terms, and exclusions will be confirmed in the client's maintenance agreement before work begins.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">Who We Help</div>
-      <h2>Built for Businesses Like Yours</h2>
-      <p>We help small businesses create a professional online presence and make it easier for customers to find them.</p>
-    </div>
-
-    <div class="industry-list">
-      <span>Barbershops</span>
-      <span>Auto Detailers</span>
-      <span>Landscapers</span>
-      <span>Cleaning Companies</span>
-      <span>Restaurants</span>
-      <span>Contractors</span>
-      <span>And More</span>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">Our Process</div>
-      <h2>Getting Started Is Simple</h2>
-      <p>No complicated process. Just a clear path to a better website.</p>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">01</div>
-        <h3>Tell Us About Your Business</h3>
-        <p>We learn about your goals, services, and what you want your website to accomplish.</p>
+  <section class="section" id="maintenance">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Ongoing Website Support</div>
+        <h2>Keep Your Website Looking Its Best.</h2>
+        <p>
+          Optional monthly maintenance plans for businesses that want help
+          keeping website content current and making agreed changes over time.
+        </p>
       </div>
 
-      <div class="step">
-        <div class="step-number">02</div>
-        <h3>We Build Your Website</h3>
-        <p>We design your website around your business and keep you updated along the way.</p>
+      <div class="maintenance-grid">
+        <div class="maintenance-card">
+          <h3>Basic</h3>
+          <div class="maintenance-price">$49/mo</div>
+          <p>Up to 30 minutes of included website content changes per month.</p>
+        </div>
+
+        <div class="maintenance-card">
+          <h3>Business</h3>
+          <div class="maintenance-price">$99/mo</div>
+          <p>Up to 1 hour of included website updates and content changes per month.</p>
+        </div>
+
+        <div class="maintenance-card">
+          <h3>Priority</h3>
+          <div class="maintenance-price">$149/mo</div>
+          <p>Up to 2 hours of included website updates and content changes per month.</p>
+        </div>
       </div>
 
-      <div class="step">
-        <div class="step-number">03</div>
-        <h3>Launch and Grow</h3>
-        <p>After approval, your website is ready to help customers find and contact you.</p>
+      <div class="maintenance-terms">
+        <strong>Maintenance plan details:</strong>
+        Included time is limited to the monthly amount listed for each plan.
+        Unused time does not roll over. Maintenance plans do not include
+        24/7 monitoring, automatic problem detection, or guaranteed emergency
+        response. Clients must notify BrightPath of issues. Response times
+        depend on the issue and agreed schedule. Work outside the included
+        plan or original scope will be quoted separately.
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="contact-section" id="contact">
-  <div class="container">
-    <div class="eyebrow">Let's Build Something Great</div>
-    <h2>Ready to Give Your Business a Better Website?</h2>
-    <p>Tell us what you need. Let's talk about building a website that works for your business.</p>
-    <a class="btn" href="mailto:brightpathwebdesign@proton.me?subject=Free%20Website%20Quote">Get Your Free Quote</a>
-    <a class="contact-email" href="mailto:brightpathwebdesign@proton.me">brightpathwebdesign@proton.me</a>
-  </div>
-</section>
+  <section class="section process">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">How It Works</div>
+        <h2>A Straightforward Process from Start to Finish.</h2>
+        <p>
+          Getting a professional website should be simple. Here's how we
+          approach each project.
+        </p>
+      </div>
 
-</main>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-number">01</div>
+          <h3>Tell Us About Your Business</h3>
+          <p>We discuss your business, goals, services, preferred style, and the features you need.</p>
+        </div>
 
-<footer>
-  <div class="container">
-    <div class="logo">BrightPath<span>.</span></div>
-    <p>Professional websites for businesses ready to grow.</p>
+        <div class="process-card">
+          <div class="process-number">02</div>
+          <h3>We Build Your Website</h3>
+          <p>We create your website based on the agreed package and project details, then review it with you.</p>
+        </div>
 
-    <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#maintenance">Maintenance</a>
-      <a href="auto-detailing.html">Auto Detailing Demo</a>
-      <a href="barbershop.html">Barbershop Demo</a>
+        <div class="process-card">
+          <div class="process-number">03</div>
+          <h3>Review and Launch</h3>
+          <p>After final review and approval, we help publish your website so customers can find your business online.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <p>Contact: brightpathwebdesign@proton.me</p>
-    <p>© 2026 BrightPath Web Design. All rights reserved.</p>
-  </div>
-</footer>
+  <section class="section contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-copy">
+        <div class="eyebrow">Let's Build Something</div>
+        <h2>Ready to Give Your Business a Better Online Presence?</h2>
+        <p>
+          Tell us a little about your business and what you're looking for.
+          We'll discuss your goals, recommend a suitable package, and explain
+          the next steps.
+        </p>
+        <p>
+          No pressure. Just a straightforward conversation about your website.
+        </p>
+        <p>
+          Email:
+          <a class="contact-email" href="mailto:brightpathwebdesign@proton.me">
+            brightpathwebdesign@proton.me
+          </a>
+        </p>
+      </div>
+
+      <div class="contact-panel">
+        <h3>Request a Website Quote</h3>
+        <p>
+          Have a project in mind? Send us an email with your business name,
+          the type of website you need, and any questions.
+        </p>
+        <a
+          class="btn"
+          href="mailto:brightpathwebdesign@proton.me?subject=Website%20Quote%20Request"
+        >
+          Email BrightPath Web Design
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="#" class="logo">BrightPath <span>Web Design</span></a>
+    <p>Professional Websites for Small Businesses.</p>
+    <p>
+      <a href="mailto:brightpathwebdesign@proton.me" class="contact-email">
+        brightpathwebdesign@proton.me
+      </a>
+    </p>
+    <p style="margin-top:18px;">© 2026 BrightPath Web Design. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
