@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A sample barbershop website designed by BrightPath Web Design.">
+  <title>The Classic Chair Barbershop | BrightPath Demo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #101d2d;
+      --navy-light: #1b2d42;
+      --gold: #c69b52;
+      --cream: #f7f4ee;
+      --white: #ffffff;
+      --text: #263342;
+      --muted: #697585;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .demo-banner {
+      background: #f0d9a9;
+      color: #493517;
+      text-align: center;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .4px;
+    }
+
+    header {
+      background: var(--navy);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 18px rgba(0,0,0,.16);
+    }
+
+    .nav-container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1.1;
+    }
+
+    .logo span {
+      display: block;
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a {
+      transition: color .2s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .nav-appointment {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 11px 17px;
+      border-radius: 4px;
+    }
+
+    .nav-appointment:hover {
+      color: var(--navy);
+      background: #dfb96f;
+    }
+
+    .hero {
+      min-height: 630px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(9,18,29,.94), rgba(9,18,29,.72), rgba(9,18,29,.25)),
+        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=85') center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 1180px;
+      width: 100%;
+      margin: auto;
+      padding: 90px 24px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 7vw, 76px);
+      line-height: 1.08;
+      max-width: 720px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 560px;
+      font-size: 18px;
+      color: #e2e5e9;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 15px 25px;
+      border-radius: 4px;
+      font-weight: 700;
+      transition: .2s;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 15px;
+    }
+
+    .button:hover {
+      background: #dfb96f;
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: white;
+      margin-left: 10px;
+    }
+
+    .button-outline:hover {
+      color: var(--navy);
+    }
+
+    .section {
+      padding: 85px 24px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 48px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(32px, 5vw, 46px);
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 460px;
+      border-radius: 6px;
+      object-fit: cover;
+      box-shadow: 18px 18px 0 var(--gold);
+    }
+
+    .about-copy h2 {
+      font-size: 42px;
+      color: var(--navy);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .about-point {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .about-point span {
+      color: var(--gold);
+      margin-right: 8px;
+    }
+
+    .services {
+      background: var(--navy);
+      color: white;
+    }
+
+    .services .section-heading h2 {
+      color: white;
+    }
+
+    .services .section-heading p {
+      color: #c1cbd5;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,.09);
+      padding: 30px;
+      border-radius: 5px;
+      transition: .2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .service-icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: var(--gold);
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #c1cbd5;
+      font-size: 14px;
+      min-height: 68px;
+    }
+
+    .service-price {
+      color: white;
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 18px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 6px;
+      background: white;
+      box-shadow: 0 8px 24px rgba(0,0,0,.07);
+    }
+
+    .gallery-item img {
+      height: 350px;
+      transition: transform .4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-caption {
+      padding: 15px 18px;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .gallery-disclosure {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 20px;
+    }
+
+    .experience {
+      background: #eae4d9;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+
+    .experience-item {
+      padding: 20px;
+    }
+
+    .experience-item .number {
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+    }
+
+    .experience-item h3 {
+      color: var(--navy);
+      font-size: 22px;
+      margin: 8px 0;
+    }
+
+    .experience-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .appointment {
+      background: var(--navy);
+      color: white;
+    }
+
+    .appointment-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .appointment-copy h2 {
+      font-size: 42px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .appointment-copy p {
+      color: #c1cbd5;
+      margin-bottom: 20px;
+    }
+
+    .contact-detail {
+      margin-top: 22px;
+      color: #e1e5e9;
+    }
+
+    .contact-detail strong {
+      color: var(--gold);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    form {
+      background: white;
+      color: var(--text);
+      padding: 32px;
+      border-radius: 6px;
+    }
+
+    form h3 {
+      color: var(--navy);
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .form-intro {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d9dee4;
+      border-radius: 4px;
+      font: inherit;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid var(--gold);
+      border-color: var(--gold);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    form .button {
+      width: 100%;
+    }
+
+    .form-disclosure {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 13px;
+      line-height: 1.5;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 75px 24px;
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .cta h2 {
+      font-size: clamp(32px, 5vw, 44px);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      margin-bottom: 24px;
+    }
+
+    .cta .button {
+      background: var(--navy);
+      color: white;
+    }
+
+    footer {
+      background: #091421;
+      color: white;
+      padding: 45px 24px 25px;
+    }
+
+    .footer-content {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding-bottom: 30px;
+    }
+
+    .footer-content p {
+      color: #b7c0ca;
+      font-size: 14px;
+      max-width: 380px;
+      margin-top: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      max-width: 1180px;
+      margin: auto;
+      border-top: 1px solid rgba(255,255,255,.13);
+      padding-top: 20px;
+      color: #9da8b4;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .brightpath-credit {
+      color: var(--gold);
+      margin-top: 8px;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        gap: 13px;
+        font-size: 12px;
+      }
+
+      .about-grid,
+      .appointment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-container {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 17px;
+      }
+
+      .hero {
+        min-height: 570px;
+      }
+
+      .hero-content {
+        padding: 65px 22px;
+      }
+
+      .button-outline {
+        margin: 12px 0 0;
+      }
+
+      .section {
+        padding: 65px 20px;
+      }
+
+      .service-grid,
+      .gallery-grid,
+      .experience-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        height: 330px;
+      }
+
+      .gallery-item img {
+        height: 260px;
+      }
+
+      form {
+        padding: 23px;
+      }
+
+      .about-copy h2,
+      .appointment-copy h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="demo-banner">
+    DEMO WEBSITE — SAMPLE DESIGN BY BRIGHTPATH WEB DESIGN — NOT A REAL BARBERSHOP
+  </div>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        THE CLASSIC CHAIR
+        <span>Barbershop</span>
+      </a>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#appointment" class="nav-appointment">Request Appointment</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Classic Style. Modern Craft.</div>
+      <h1>A Great Haircut Never Goes Out of Style.</h1>
+      <p>
+        A clean cut, a fresh shave, and a little time in the chair.
+        Discover a barbershop website concept built around style,
+        craftsmanship, and a welcoming experience.
+      </p>
+      <a href="#services" class="button">Explore Services</a>
+      <a href="#appointment" class="button button-outline">Request an Appointment</a>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <img
+        class="about-image"
+        src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1000&q=85"
+        alt="Barber giving a customer a haircut"
+      >
+
+      <div class="about-copy">
+        <div class="eyebrow">The Barbershop Experience</div>
+        <h2>More Than Just a Haircut.</h2>
+        <p>
+          The Classic Chair is a fictional barbershop concept created to
+          showcase what a professional, modern barbershop website can look like.
+        </p>
+        <p>
+          From sharp fades to classic cuts and beard grooming, this sample
+          design puts services, pricing, photos, and appointment requests
+          front and center.
+        </p>
+
+        <div class="about-points">
+          <div class="about-point"><span>✓</span> Classic Cuts</div>
+          <div class="about-point"><span>✓</span> Clean Fades</div>
+          <div class="about-point"><span>✓</span> Beard Grooming</div>
+          <div class="about-point"><span>✓</span> Personal Style</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">What We Offer</div>
+        <h2>Services & Pricing</h2>
+        <p>
+          A sample service menu showing how customers can quickly understand
+          their options and see pricing before requesting an appointment.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">✂️</div>
+          <h3>Classic Haircut</h3>
+          <p>A clean, timeless haircut tailored to your preferred style.</p>
+          <div class="service-price">$30</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💈</div>
+          <h3>Skin Fade</h3>
+          <p>A detailed fade with clean lines and a polished finish.</p>
+          <div class="service-price">$35</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🧔</div>
+          <h3>Beard Trim</h3>
+          <p>Shape, trim, and clean up your beard for a sharp look.</p>
+          <div class="service-price">$20</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🪒</div>
+          <h3>Hot Towel Shave</h3>
+          <p>A traditional shave experience with attention to detail.</p>
+          <div class="service-price">$30</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">⭐</div>
+          <h3>Haircut & Beard</h3>
+          <p>A complete grooming service for a fresh head-to-beard look.</p>
+          <div class="service-price">$45</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">👦</div>
+          <h3>Kids Haircut</h3>
+          <p>A comfortable, classic haircut for younger customers.</p>
+          <div class="service-price">$22</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">The Look</div>
+        <h2>Style Speaks for Itself.</h2>
+        <p>
+          A photo gallery gives visitors a feel for the atmosphere and
+          craftsmanship behind a barbershop.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1100&q=85"
+            alt="Barber working on a client's haircut"
+            loading="lazy"
+          >
+          <div class="gallery-caption">The Art of the Cut</div>
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1100&q=85"
+            alt="Professional barber grooming a customer"
+            loading="lazy"
+          >
+          <div class="gallery-caption">Attention to Detail</div>
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1100&q=85"
+            alt="Barbershop interior"
+            loading="lazy"
+          >
+          <div class="gallery-caption">The Shop Atmosphere</div>
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1100&q=85"
+            alt="Barber tools and grooming equipment"
+            loading="lazy"
+          >
+          <div class="gallery-caption">The Tools of the Trade</div>
+        </div>
+      </div>
+
+      <p class="gallery-disclosure">
+        Gallery photos are illustrative stock images, not client projects
+        or work completed by BrightPath Web Design.
+      </p>
+    </div>
+  </section>
+
+  <section class="section experience">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Why a Professional Website Matters</div>
+        <h2>Make a Strong First Impression.</h2>
+        <p>
+          A well-organized website helps potential customers find the
+          information they need before they ever walk through the door.
+        </p>
+      </div>
+
+      <div class="experience-grid">
+        <div class="experience-item">
+          <div class="number">01</div>
+          <h3>Show Your Work</h3>
+          <p>Use strong photography to showcase cuts, styles, and the shop.</p>
+        </div>
+
+        <div class="experience-item">
+          <div class="number">02</div>
+          <h3>Display Your Prices</h3>
+          <p>Help customers understand your services and pricing at a glance.</p>
+        </div>
+
+        <div class="experience-item">
+          <div class="number">03</div>
+          <h3>Get More Inquiries</h3>
+          <p>Make it easy for visitors to send an appointment request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section appointment" id="appointment">
+    <div class="container appointment-grid">
+      <div class="appointment-copy">
+        <div class="eyebrow">Get in Touch</div>
+        <h2>Ready for a Fresh Look?</h2>
+        <p>
+          This sample appointment form demonstrates how a barbershop
+          could collect customer requests directly through its website.
+        </p>
+        <p>
+          In a real client project, this area can be customized with the
+          shop's actual phone number, business hours, address, booking
+          system, and contact details.
+        </p>
+
+        <div class="contact-detail">
+          <strong>Business Name</strong>
+          The Classic Chair Barbershop (Sample)
+        </div>
+
+        <div class="contact-detail">
+          <strong>Location</strong>
+          Sample location — to be customized
+        </div>
+
+        <div class="contact-detail">
+          <strong>Hours</strong>
+          Sample hours — to be customized
+        </div>
+      </div>
+
+      <form action="https://formspree.io/f/xpppkwje" method="POST">
+        <input type="hidden" name="_subject" value="Barbershop Demo Appointment Request">
+
+        <h3>Request an Appointment</h3>
+        <p class="form-intro">
+          Complete the form below to see how an online appointment request works.
+        </p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Requested *</label>
+            <select id="service" name="service" required>
+              <option value="">Choose a service</option>
+              <option>Classic Haircut</option>
+              <option>Skin Fade</option>
+              <option>Beard Trim</option>
+              <option>Hot Towel Shave</option>
+              <option>Haircut & Beard</option>
+              <option>Kids Haircut</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="preferred_date">
+          </div>
+
+          <div class="form-group">
+            <label for="time">Preferred Time</label>
+            <select id="time" name="preferred_time">
+              <option value="">Choose a time</option>
+              <option>Morning</option>
+              <option>Afternoon</option>
+              <option>Evening</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="details">Additional Details</label>
+          <textarea id="details" name="details" placeholder="Tell us anything else about your appointment request..."></textarea>
+        </div>
+
+        <button type="submit" class="button">Send Appointment Request</button>
+
+        <p class="form-disclosure">
+          DEMO NOTICE: This is a sample website, not a real barbershop.
+          Form submissions are routed to BrightPath Web Design for demonstration
+          purposes and do not create an actual barbershop appointment.
+          Do not submit sensitive personal information.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Your Next Great Look Starts Here.</h2>
+      <p>
+        A professional website can help a local barbershop put its best foot forward.
+      </p>
+      <a href="#appointment" class="button">Request an Appointment</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <a href="#" class="logo">
+          THE CLASSIC CHAIR
+          <span>Barbershop</span>
+        </a>
+        <p>
+          A fictional barbershop website concept designed to demonstrate
+          the website services offered by BrightPath Web Design.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#appointment">Appointment</a>
+        <a href="https://brightpathwebdesignco.github.io">BrightPath Home</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 The Classic Chair Barbershop — Sample Website Demo.</p>
+      <p class="brightpath-credit">Website concept by BrightPath Web Design.</p>
+      <p>All business details and prices shown are fictional examples.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
