@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,9 +116,7 @@ nav a:hover { color: var(--blue); }
   padding: 100px 0;
 }
 
-.hero-content {
-  max-width: 760px;
-}
+.hero-content { max-width: 760px; }
 
 .eyebrow {
   text-transform: uppercase;
@@ -296,9 +293,7 @@ nav a:hover { color: var(--blue); }
 
 .payment-disclosure p { font-size: .95rem; }
 
-.maintenance-card .price {
-  font-size: 1.8rem;
-}
+.maintenance-card .price { font-size: 1.8rem; }
 
 .steps {
   display: grid;
@@ -418,10 +413,18 @@ footer a { color: white; text-decoration: underline; }
 }
 
 @media (max-width: 600px) {
-  .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+  .nav {
+    padding: 14px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   nav { gap: 12px 17px; }
+
   .hero { padding: 70px 0; }
+
   section { padding: 58px 0; }
+
   .grid, .steps { grid-template-columns: 1fr; }
 }
 </style>
@@ -432,6 +435,7 @@ footer a { color: white; text-decoration: underline; }
 <header>
   <div class="container nav">
     <a class="logo" href="#home">Wexlark <span>Web Co.</span></a>
+
     <nav aria-label="Main navigation">
       <a href="#services">Services</a>
       <a href="#demos">Demos</a>
@@ -444,11 +448,19 @@ footer a { color: white; text-decoration: underline; }
 
 <main>
 
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="container hero-content">
     <div class="eyebrow">Websites built for small business</div>
+
     <h1>A professional website that helps your business stand out.</h1>
-    <p>Wexlark Web Co. creates clean, modern websites that help small businesses build trust, showcase their services, and make it easier for customers to get in touch.</p>
+
+    <p>
+      Wexlark Web Co. creates clean, modern websites that help small
+      businesses build trust, showcase their services, and make it
+      easier for customers to get in touch.
+    </p>
+
     <div class="hero-buttons">
       <a class="button" href="#contact">Request a Website</a>
       <a class="button secondary" href="#demos">Explore Demo Sites</a>
@@ -456,61 +468,112 @@ footer a { color: white; text-decoration: underline; }
   </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services">
   <div class="container">
+
     <div class="section-heading">
       <div class="eyebrow">What we do</div>
       <h2>Everything your business needs to get online</h2>
-      <p>Practical website solutions designed to give your business a polished, professional online presence.</p>
+      <p>
+        Practical website solutions designed to give your business
+        a polished, professional online presence.
+      </p>
     </div>
 
     <div class="grid">
+
       <div class="card">
         <div class="icon">✦</div>
         <h3>Custom Website Design</h3>
-        <p>Professional layouts built around your business, services, and customers.</p>
+        <p>
+          Professional layouts built around your business,
+          services, and customers.
+        </p>
       </div>
+
       <div class="card">
         <div class="icon">▣</div>
         <h3>Mobile-Friendly Design</h3>
-        <p>Responsive pages designed to look good on phones, tablets, and computers.</p>
+        <p>
+          Responsive pages designed to look good on phones,
+          tablets, and computers.
+        </p>
       </div>
+
       <div class="card">
         <div class="icon">⌕</div>
         <h3>Clear Contact Options</h3>
-        <p>Make it easier for potential customers to call, email, or send an inquiry.</p>
+        <p>
+          Make it easier for potential customers to call,
+          email, or send an inquiry.
+        </p>
       </div>
+
       <div class="card">
         <div class="icon">▤</div>
         <h3>Service Pages</h3>
-        <p>Organized sections that explain what you offer and help visitors find what they need.</p>
+        <p>
+          Organized sections that explain what you offer
+          and help visitors find what they need.
+        </p>
       </div>
+
       <div class="card">
         <div class="icon">↗</div>
         <h3>Website Launch</h3>
-        <p>Help getting your completed website published and ready for visitors.</p>
+        <p>
+          Help getting your completed website published
+          and ready for visitors.
+        </p>
       </div>
+
       <div class="card">
         <div class="icon">⚙</div>
         <h3>Optional Maintenance</h3>
-        <p>Ongoing update time for clients who want help keeping their website current.</p>
+        <p>
+          Ongoing update time for clients who want help
+          keeping their website current.
+        </p>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- ABOUT WEXLARK -->
 <section class="soft-section" id="about">
   <div class="container about-layout">
+
     <div>
       <div class="eyebrow">About Wexlark</div>
+
       <h2>A straightforward website process without the guesswork.</h2>
-      <p>Small businesses deserve a professional online presence without an unnecessarily complicated process.</p>
-      <p>Wexlark Web Co. focuses on clean design, clear communication, and practical websites built around each business's needs.</p>
-      <p>Whether you're starting from scratch or improving an existing online presence, we'll work with you to create a site that represents your business.</p>
-      <a class="button" href="#contact">Let's Talk About Your Website</a>
+
+      <p>
+        Small businesses deserve a professional online presence
+        without an unnecessarily complicated process.
+      </p>
+
+      <p>
+        Wexlark Web Co. focuses on clean design, clear communication,
+        and practical websites built around each business's needs.
+      </p>
+
+      <p>
+        Whether you're starting from scratch or improving an existing
+        online presence, we'll work with you to create a site that
+        represents your business.
+      </p>
+
+      <a class="button" href="#contact">
+        Let's Talk About Your Website
+      </a>
     </div>
+
     <div class="trust-panel">
       <h3>What you can expect</h3>
+
       <ul>
         <li>✓ A design based on your business</li>
         <li>✓ Mobile-friendly page layouts</li>
@@ -520,90 +583,153 @@ footer a { color: white; text-decoration: underline; }
         <li>✓ Optional ongoing maintenance</li>
       </ul>
     </div>
+
   </div>
 </section>
 
+<!-- DEMOS -->
 <section id="demos">
   <div class="container">
+
     <div class="section-heading">
       <div class="eyebrow">Explore our designs</div>
       <h2>Website demo examples</h2>
-      <p>Explore sample layouts for different types of small businesses. Each demo illustrates a possible design direction.</p>
+      <p>
+        Explore sample layouts for different types of small businesses.
+        Each demo illustrates a possible design direction.
+      </p>
     </div>
 
     <div class="grid">
+
+      <!-- AUTO DETAILING -->
       <div class="card demo-card">
         <div class="demo-content">
           <span class="demo-label">Auto Detailing</span>
           <h3>Automotive Website</h3>
-          <p>A polished design for detailing services, packages, and customer inquiries.</p>
+          <p>
+            A polished design for detailing services,
+            packages, and customer inquiries.
+          </p>
           <a class="button" href="auto-detailing.html">View Demo</a>
         </div>
       </div>
 
+      <!-- BARBERSHOP -->
       <div class="card demo-card">
         <div class="demo-content">
           <span class="demo-label">Barbershop</span>
           <h3>Barbershop Website</h3>
-          <p>A classic style for showcasing services, shop information, and appointment inquiries.</p>
+          <p>
+            A classic style for showcasing services,
+            shop information, and appointment inquiries.
+          </p>
           <a class="button" href="barbershop.html">View Demo</a>
         </div>
       </div>
 
+      <!-- LANDSCAPING -->
       <div class="card demo-card">
         <div class="demo-content">
           <span class="demo-label">Landscaping</span>
           <h3>Landscaping Website</h3>
-          <p>A fresh layout for outdoor services, project photos, and quote requests.</p>
+          <p>
+            A fresh layout for outdoor services,
+            project photos, and quote requests.
+          </p>
           <a class="button" href="landscaping.html">View Demo</a>
         </div>
       </div>
 
+      <!-- CLEANING -->
       <div class="card demo-card">
         <div class="demo-content">
           <span class="demo-label">Cleaning</span>
           <h3>Cleaning Service Website</h3>
-          <p>A welcoming design for residential and commercial cleaning businesses.</p>
+          <p>
+            A welcoming design for residential and
+            commercial cleaning businesses.
+          </p>
           <a class="button" href="cleaning.html">View Demo</a>
         </div>
       </div>
 
+      <!-- PLUMBING -->
       <div class="card demo-card">
         <div class="demo-content">
           <span class="demo-label">Plumbing</span>
           <h3>Plumbing Website</h3>
-          <p>A clear, service-focused design for plumbing businesses and quote requests.</p>
+          <p>
+            A clear, service-focused design for plumbing
+            businesses and quote requests.
+          </p>
           <a class="button" href="plumbing.html">View Demo</a>
         </div>
       </div>
 
+      <!-- HANDYMAN -->
       <div class="card demo-card">
         <div class="demo-content">
           <span class="demo-label">Handyman</span>
           <h3>Handyman Website</h3>
-          <p>A practical layout for home repairs, services, and customer inquiries.</p>
+          <p>
+            A practical layout for home repairs,
+            services, and customer inquiries.
+          </p>
           <a class="button" href="handyman.html">View Demo</a>
         </div>
       </div>
+
+      <!-- REAL ESTATE AGENT -->
+      <div class="card demo-card">
+        <div class="demo-content">
+          <span class="demo-label">Real Estate</span>
+          <h3>Individual Realtor Website</h3>
+          <p>
+            A polished individual agent website featuring
+            property listings, home searches, agent information,
+            buyer and seller services, and contact inquiries.
+          </p>
+          <a class="button" href="everstead-realty.html">View Demo</a>
+        </div>
+      </div>
+
     </div>
 
-    <p class="demo-note">Demo websites are examples for design purposes only. Business names, services, photos, and details shown in the demos may be fictional and do not represent actual client projects.</p>
+    <p class="demo-note">
+      Demo websites are examples for design purposes only.
+      Business names, services, photos, and details shown in
+      the demos may be fictional and do not represent actual
+      client projects.
+    </p>
+
   </div>
 </section>
 
+<!-- PRICING -->
 <section id="pricing" class="soft-section">
   <div class="container">
+
     <div class="section-heading">
       <div class="eyebrow">Website packages</div>
       <h2>Clear pricing for your next website</h2>
-      <p>Choose a starting package. Final project details and scope will be agreed upon before work begins.</p>
+      <p>
+        Choose a starting package. Final project details and scope
+        will be agreed upon before work begins.
+      </p>
     </div>
 
     <div class="grid">
+
       <div class="card pricing-card">
         <h3>Starter</h3>
         <div class="price">$499</div>
-        <p>For businesses that need a clean, professional starting point.</p>
+
+        <p>
+          For businesses that need a clean,
+          professional starting point.
+        </p>
+
         <ul>
           <li>One-page website</li>
           <li>Mobile-friendly layout</li>
@@ -611,6 +737,7 @@ footer a { color: white; text-decoration: underline; }
           <li>Contact information or inquiry form</li>
           <li>Basic launch assistance</li>
         </ul>
+
         <a class="button" href="#contact">Choose Starter</a>
       </div>
 
@@ -618,7 +745,12 @@ footer a { color: white; text-decoration: underline; }
         <div class="featured-label">Popular choice</div>
         <h3>Business</h3>
         <div class="price">$899</div>
-        <p>For businesses that need more room to explain their services.</p>
+
+        <p>
+          For businesses that need more room
+          to explain their services.
+        </p>
+
         <ul>
           <li>Up to five pages</li>
           <li>Mobile-friendly layout</li>
@@ -627,13 +759,19 @@ footer a { color: white; text-decoration: underline; }
           <li>Basic search engine setup</li>
           <li>Launch assistance</li>
         </ul>
+
         <a class="button" href="#contact">Choose Business</a>
       </div>
 
       <div class="card pricing-card">
         <h3>Premium</h3>
         <div class="price">$1,499</div>
-        <p>For businesses that want a more extensive online presence.</p>
+
+        <p>
+          For businesses that want a more
+          extensive online presence.
+        </p>
+
         <ul>
           <li>Up to eight pages</li>
           <li>Custom page layouts</li>
@@ -643,54 +781,88 @@ footer a { color: white; text-decoration: underline; }
           <li>Additional design refinement</li>
           <li>Launch assistance</li>
         </ul>
+
         <a class="button" href="#contact">Choose Premium</a>
       </div>
+
     </div>
 
     <div class="payment-disclosure">
       <h3>Project deposit and payment terms</h3>
-      <p>A 50% deposit is required before work begins. The deposit is applied toward the total agreed project price. The remaining 50% is due before the completed website is launched. Any work outside the agreed project scope will be discussed and quoted separately before that additional work begins.</p>
+      <p>
+        A 50% deposit is required before work begins. The deposit
+        is applied toward the total agreed project price. The
+        remaining 50% is due before the completed website is
+        launched. Any work outside the agreed project scope will
+        be discussed and quoted separately before that additional
+        work begins.
+      </p>
     </div>
+
   </div>
 </section>
 
+<!-- MAINTENANCE -->
 <section id="maintenance">
   <div class="container">
+
     <div class="section-heading">
       <div class="eyebrow">Ongoing support</div>
       <h2>Optional website maintenance</h2>
-      <p>Choose a monthly plan if you'd like help with occasional website updates after launch.</p>
+      <p>
+        Choose a monthly plan if you'd like help with occasional
+        website updates after launch.
+      </p>
     </div>
 
     <div class="grid">
+
       <div class="card maintenance-card">
         <h3>Basic</h3>
-        <div class="price">$49<span style="font-size:1rem;font-weight:400"> / month</span></div>
+        <div class="price">
+          $49<span style="font-size:1rem;font-weight:400"> / month</span>
+        </div>
         <p>Up to 30 minutes of website update time per month.</p>
       </div>
 
       <div class="card maintenance-card">
         <h3>Business</h3>
-        <div class="price">$99<span style="font-size:1rem;font-weight:400"> / month</span></div>
+        <div class="price">
+          $99<span style="font-size:1rem;font-weight:400"> / month</span>
+        </div>
         <p>Up to one hour of website update time per month.</p>
       </div>
 
       <div class="card maintenance-card">
         <h3>Priority</h3>
-        <div class="price">$149<span style="font-size:1rem;font-weight:400"> / month</span></div>
+        <div class="price">
+          $149<span style="font-size:1rem;font-weight:400"> / month</span>
+        </div>
         <p>Up to two hours of website update time per month.</p>
       </div>
+
     </div>
 
     <div class="payment-disclosure">
       <h3>Maintenance plan details</h3>
-      <p>Monthly maintenance time does not roll over. Maintenance plans cover the stated amount of update time, not 24/7 monitoring or automatic problem detection. Clients should notify Wexlark Web Co. when an issue or update is needed. Response timing depends on the request and agreed schedule. Work outside the included time or plan scope will be quoted separately.</p>
+      <p>
+        Monthly maintenance time does not roll over. Maintenance
+        plans cover the stated amount of update time, not 24/7
+        monitoring or automatic problem detection. Clients should
+        notify Wexlark Web Co. when an issue or update is needed.
+        Response timing depends on the request and agreed schedule.
+        Work outside the included time or plan scope will be quoted
+        separately.
+      </p>
     </div>
+
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
 <section class="soft-section" id="process">
   <div class="container">
+
     <div class="section-heading">
       <div class="eyebrow">How it works</div>
       <h2>A simple process from idea to launch</h2>
@@ -698,32 +870,51 @@ footer a { color: white; text-decoration: underline; }
     </div>
 
     <div class="steps">
+
       <div class="card">
         <div class="step-number">1</div>
         <h3>Tell us about your business</h3>
-        <p>Share your services, goals, preferred style, and the type of website you need.</p>
+        <p>
+          Share your services, goals, preferred style,
+          and the type of website you need.
+        </p>
       </div>
+
       <div class="card">
         <div class="step-number">2</div>
         <h3>Review the project plan</h3>
-        <p>We'll agree on the package, project scope, timeline, and payment terms.</p>
+        <p>
+          We'll agree on the package, project scope,
+          timeline, and payment terms.
+        </p>
       </div>
+
       <div class="card">
         <div class="step-number">3</div>
         <h3>Design and review</h3>
-        <p>Work begins after the deposit. You'll have an opportunity to review the website.</p>
+        <p>
+          Work begins after the deposit. You'll have
+          an opportunity to review the website.
+        </p>
       </div>
+
       <div class="card">
         <div class="step-number">4</div>
         <h3>Final payment and launch</h3>
-        <p>After approval and final payment, we'll proceed with the website launch.</p>
+        <p>
+          After approval and final payment, we'll
+          proceed with the website launch.
+        </p>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- FAQ -->
 <section id="faq">
   <div class="container">
+
     <div class="section-heading">
       <div class="eyebrow">Common questions</div>
       <h2>Frequently asked questions</h2>
@@ -731,80 +922,161 @@ footer a { color: white; text-decoration: underline; }
 
     <div class="faq-item">
       <h3>How do I get started?</h3>
-      <p>Send an inquiry using the contact form. We'll discuss your business, website goals, and the package that fits your needs.</p>
+      <p>
+        Send an inquiry using the contact form. We'll discuss
+        your business, website goals, and the package that
+        fits your needs.
+      </p>
     </div>
 
     <div class="faq-item">
       <h3>When do I pay the deposit?</h3>
-      <p>A 50% deposit is due before work begins. The remaining 50% is due before the completed website is launched.</p>
+      <p>
+        A 50% deposit is due before work begins. The remaining
+        50% is due before the completed website is launched.
+      </p>
     </div>
 
     <div class="faq-item">
       <h3>Can I request changes?</h3>
-      <p>Project review and agreed revisions will be discussed as part of your project scope. Additional work outside that scope will be quoted separately.</p>
+      <p>
+        Project review and agreed revisions will be discussed
+        as part of your project scope. Additional work outside
+        that scope will be quoted separately.
+      </p>
     </div>
 
     <div class="faq-item">
       <h3>Do I have to purchase maintenance?</h3>
-      <p>No. Monthly maintenance is optional and can be selected if you want ongoing update assistance.</p>
+      <p>
+        No. Monthly maintenance is optional and can be selected
+        if you want ongoing update assistance.
+      </p>
     </div>
 
     <div class="faq-item">
       <h3>How long does a website take?</h3>
-      <p>Timing depends on the size of the project, the agreed scope, and how quickly content and feedback are provided. We'll discuss an estimated timeline before work begins.</p>
+      <p>
+        Timing depends on the size of the project, the agreed
+        scope, and how quickly content and feedback are provided.
+        We'll discuss an estimated timeline before work begins.
+      </p>
     </div>
+
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="soft-section" id="contact">
   <div class="container">
+
     <div class="section-heading">
       <div class="eyebrow">Let's get started</div>
       <h2>Tell us about your website project</h2>
-      <p>Have a question or ready to discuss a new website? Send a message and we'll follow up.</p>
+      <p>
+        Have a question or ready to discuss a new website?
+        Send a message and we'll follow up.
+      </p>
     </div>
 
     <div class="contact-layout">
+
       <div>
+
         <div class="card">
           <h3>Start with a project inquiry</h3>
-          <p>Share a little about your business, what you need, and which package you're considering.</p>
-          <p style="margin-top:18px"><strong>Email:</strong><br>
-          <a href="mailto:brightpathwebdesign@proton.me">brightpathwebdesign@proton.me</a></p>
-          <p style="margin-top:18px"><strong>Website:</strong><br>
-          <a href="https://wexlarkwebco.github.io">wexlarkwebco.github.io</a></p>
+
+          <p>
+            Share a little about your business, what you need,
+            and which package you're considering.
+          </p>
+
+          <p style="margin-top:18px">
+            <strong>Email:</strong><br>
+            <a href="mailto:brightpathwebdesign@proton.me">
+              brightpathwebdesign@proton.me
+            </a>
+          </p>
+
+          <p style="margin-top:18px">
+            <strong>Website:</strong><br>
+            <a href="https://wexlarkwebco.github.io">
+              wexlarkwebco.github.io
+            </a>
+          </p>
         </div>
 
         <div class="payment-disclosure">
           <h3>Before making a payment</h3>
-          <p>Please contact Wexlark Web Co. first so the project scope, total price, deposit amount, and payment schedule are confirmed. The QR code is provided as a payment option for agreed project payments; it is not a substitute for a project agreement or invoice.</p>
+          <p>
+            Please contact Wexlark Web Co. first so the project
+            scope, total price, deposit amount, and payment schedule
+            are confirmed. The QR code is provided as a payment
+            option for agreed project payments; it is not a
+            substitute for a project agreement or invoice.
+          </p>
         </div>
 
         <div class="qr-card">
           <h3>Pay your agreed deposit with Venmo</h3>
-          <p>Scan the QR code with your phone to open the Wexlark Web Co. Venmo profile.</p>
-          <img src="Image-1%20(1).png" alt="Wexlark Web Co. Venmo Business QR code">
+
+          <p>
+            Scan the QR code with your phone to open the
+            Wexlark Web Co. Venmo profile.
+          </p>
+
+          <img
+            src="Image-1%20(1).png"
+            alt="Wexlark Web Co. Venmo Business QR code">
+
           <div class="qr-handle">@wexlarkco</div>
-          <p class="small-note">Please confirm the payment amount and project details with us before sending payment.</p>
+
+          <p class="small-note">
+            Please confirm the payment amount and project details
+            with us before sending payment.
+          </p>
         </div>
+
       </div>
 
       <form action="https://formspree.io/f/xpppkwje" method="POST">
+
         <h3>Project inquiry form</h3>
 
-        <input type="hidden" name="_subject" value="New Wexlark Web Co. Website Inquiry">
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Wexlark Web Co. Website Inquiry">
 
         <label for="name">Your name</label>
-        <input id="name" name="name" type="text" autocomplete="name" required>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          required>
 
         <label for="business">Business name</label>
-        <input id="business" name="business" type="text" required>
+        <input
+          id="business"
+          name="business"
+          type="text"
+          required>
 
         <label for="email">Email address</label>
-        <input id="email" name="email" type="email" autocomplete="email" required>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required>
 
         <label for="phone">Phone number (optional)</label>
-        <input id="phone" name="phone" type="tel" autocomplete="tel">
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          autocomplete="tel">
 
         <label for="package">Package you're interested in</label>
         <select id="package" name="package">
@@ -816,33 +1088,61 @@ footer a { color: white; text-decoration: underline; }
         </select>
 
         <label for="message">Tell us about your project</label>
-        <textarea id="message" name="message" placeholder="What does your business do, and what would you like your website to include?" required></textarea>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="What does your business do, and what would you like your website to include?"
+          required></textarea>
 
         <div class="payment-disclosure">
-          <p><strong>Payment terms:</strong> A 50% deposit is required before work begins. The remaining 50% is due before launch. Additional work outside the agreed scope is quoted separately.</p>
+          <p>
+            <strong>Payment terms:</strong> A 50% deposit is required
+            before work begins. The remaining 50% is due before launch.
+            Additional work outside the agreed scope is quoted separately.
+          </p>
         </div>
 
         <label style="display:flex;gap:10px;align-items:flex-start;font-weight:400">
-          <input type="checkbox" name="payment_terms_acknowledged" value="Acknowledged" required style="width:auto;margin-top:5px">
-          <span>I understand the project deposit and payment terms shown above.</span>
+          <input
+            type="checkbox"
+            name="payment_terms_acknowledged"
+            value="Acknowledged"
+            required
+            style="width:auto;margin-top:5px">
+
+          <span>
+            I understand the project deposit and payment terms shown above.
+          </span>
         </label>
 
-        <button class="button" type="submit">Send Project Inquiry</button>
+        <button class="button" type="submit">
+          Send Project Inquiry
+        </button>
+
       </form>
+
     </div>
   </div>
 </section>
 
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="container">
+
     <div class="footer-logo">Wexlark Web Co.</div>
+
     <p>Professional websites for small businesses.</p>
+
     <p style="margin-top:12px">
       <a href="#home">Back to top</a>
     </p>
-    <p style="margin-top:18px">© <span id="year"></span> Wexlark Web Co. All rights reserved.</p>
+
+    <p style="margin-top:18px">
+      © <span id="year"></span> Wexlark Web Co. All rights reserved.
+    </p>
+
   </div>
 </footer>
 
